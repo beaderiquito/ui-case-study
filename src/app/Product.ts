@@ -1,5 +1,3 @@
-import { Map } from "typescript";
-
 export class Product{
     id: number;
     photo: string;
@@ -14,5 +12,4 @@ export class Product{
         this.price = price;
         this.reviews = reviews;
     }
-
 }
