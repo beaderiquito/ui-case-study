@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: 'products', component: ProductListComponent},
   {path: 'products/:searchQuery', component: ProductListComponent}, //still not working properly
-  {path: 'product-details/:product-id', component: ProductDetailComponent},
+  {path: 'products/product-details/:product-id', component: ProductDetailComponent},
   {path: 'cart', component: CartComponent},
 
 ];
