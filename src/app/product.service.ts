@@ -15,5 +15,6 @@ export class ProductService {
   getProduct(id: number): Observable<Product>{
     const product = PRODUCTS.find(p => p.id === id)!;
     return of(product);
-  }
+  } 
+
 }
