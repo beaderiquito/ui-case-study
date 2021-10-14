@@ -17,7 +17,7 @@
             <div>{{review.username}}</div>
             <div>{{review.date}}</div>
             <div>{{review.content}}</div>
-            <div>{{review.stars}}</div>
+            <rating [(ngModel)]="review.stars" [readonly]="true"></rating>
         </div>
     </div>
 </div>

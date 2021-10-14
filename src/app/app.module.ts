@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RatingModule } from 'ngx-bootstrap/rating';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    RatingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
