@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-search-box',
@@ -6,10 +7,17 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./search-box.component.scss']
 })
 export class SearchBoxComponent implements OnInit{
-  term: string = '';
+  input: string = '';
+  searchText: string='';
   
-  constructor() {  }
+  constructor(private searchService: SearchService) {  }
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.searchService.currentSearchInput.subscribe(input => this.input = input);
+  }
+
+  submit(){
+    this.searchService.updateSearchInput(this.searchText);
+  }
 
 }

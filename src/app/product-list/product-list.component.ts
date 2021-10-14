@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../Product';
 import { ProductService } from '../product.service';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,27 +10,26 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  //To close list of products:
-  //closeProduct: boolean = false;
   showSearchResults = true;
-  searchQuery: string = 'apple';
+  searchQuery: string = '';
   selectedProduct?: Product;
   products: Product[] = [];
   searchResults: Product[] = [];
 
   constructor(
     public productService: ProductService,
-    public router: Router
+    public router: Router,
+    private searchService: SearchService
   ){}
 
   ngOnInit(): void {
     this.getAllProducts();
+    this.searchService.currentSearchInput.subscribe(input => this.searchQuery = input);
     this.searchProducts(this.searchQuery);
   }
 
   onSelect(product: Product): void{
     this.selectedProduct = product;
-    //this.closeProduct = true;
   }
 
   getAllProducts(): void {
@@ -49,8 +49,6 @@ export class ProductListComponent implements OnInit {
         this.searchResults.push(this.products[i]);
       }
     }
-    //this.products.length = 0;
-    //this.products.concat(this.searchResults);
     this.products = this.searchResults;
     this.showSearchResults = true;
   }

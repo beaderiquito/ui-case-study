@@ -1,3 +1,4 @@
 <div>
-    <input #term type="text"/><i class="material-icons">search</i>
+    <input [(ngModel)]="searchText" type="text"/>
+    <i class="material-icons" (click)="submit()">search</i>
 </div>
