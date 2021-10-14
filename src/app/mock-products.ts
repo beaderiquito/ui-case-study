@@ -12,8 +12,8 @@ export const PRODUCTS: Product[] = [
     {id: 2, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Apple', price: 2000, reviews:  
         [
             {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
-            {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
-            {username: 'username3', date: 'April 20, 2021', content: 'Do not buy!', stars: 1},    
+            {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 2},
+            {username: 'username3', date: 'April 20, 2021', content: 'Do not buy!', stars: 4},    
         ],
         description: 'Product description'
     },

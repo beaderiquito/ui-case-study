@@ -59,10 +59,12 @@ export class ProductListComponent implements OnInit {
   }
 
   getAverageStars(array: any){
+    let sum: number = 0;
     let average: number = 0;
     for(let i=0; i<array.length; i++){
-      average = (average + array[i].stars) / (i+1);
+      sum = (sum + array[i].stars);
     }
+    average = sum / array.length;
     return Math.ceil(average);
   }
 }
