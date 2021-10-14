@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
   //To close list of products:
   //closeProduct: boolean = false;
-  searchQuery: string = '';
+  searchQuery: string = 'Product';
   selectedProduct?: Product;
   products: Product[] = [];
   searchedProducts: Product[] = [];
@@ -21,7 +21,8 @@ export class ProductListComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.getAllProducts();
+    //this.getAllProducts();
+    this.searchProducts(this.searchQuery);
   }
 
   onSelect(product: Product): void{
@@ -40,5 +41,6 @@ export class ProductListComponent implements OnInit {
         this.searchedProducts.push(this.products[i]);
       }
     }
+    console.log("Returned search results.")
   }
 }
