@@ -1,1 +1,15 @@
-<h1>This page shall contain details about product # {{id}}</h1>
+<div class="container">
+	<div *ngIf="product">
+		<div class="row">
+			<div class="col">
+				<img [src]="product.photo" style="width:70%">
+			</div>
+			<div class="col">	
+				<h3><b>{{product.name}}</b></h3>
+				<p>{{product.price}}</p>
+				<p>{{getAverageStars(product.reviews)}} stars ({{product.reviews.length}} Reviews)</p>
+				<p>{{product.description}}</p>
+			</div>
+		</div>
+	</div>
+</div>
