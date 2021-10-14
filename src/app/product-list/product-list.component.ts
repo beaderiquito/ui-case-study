@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../Product';
 import { ProductService } from '../product.service';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -10,10 +11,11 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
   //To close list of products:
   //closeProduct: boolean = false;
-  searchQuery: string = 'Product';
+  showSearchResults = true;
+  searchQuery: string = 'apple';
   selectedProduct?: Product;
   products: Product[] = [];
-  searchedProducts: Product[] = [];
+  searchResults: Product[] = [];
 
   constructor(
     public productService: ProductService,
@@ -21,7 +23,7 @@ export class ProductListComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    //this.getAllProducts();
+    this.getAllProducts();
     this.searchProducts(this.searchQuery);
   }
 
@@ -33,14 +35,31 @@ export class ProductListComponent implements OnInit {
   getAllProducts(): void {
     this.productService.getAllProducts()
       .subscribe(products => this.products = products);
+    this.products = this.products;
   }
 
   searchProducts(searchQuery: string): void {
+    searchQuery = searchQuery.toLowerCase().trim();
+    //clear the array products
+    this.searchResults.length = 0;
+
+    //searches for products that include the substring searchQuery in their name or description
     for(let i= 0; i<this.products.length; i++){
-      if(this.products[i].name.includes(searchQuery) || this.products[i].description.includes(searchQuery)){
-        this.searchedProducts.push(this.products[i]);
+      if(this.products[i].name.toLowerCase().includes(searchQuery) || this.products[i].description.toLowerCase().includes(searchQuery)){
+        this.searchResults.push(this.products[i]);
       }
     }
-    console.log("Returned search results.")
+    //this.products.length = 0;
+    //this.products.concat(this.searchResults);
+    this.products = this.searchResults;
+    this.showSearchResults = true;
+  }
+
+  getAverageStars(array: any){
+    let average: number = 0;
+    for(let i=0; i<array.length; i++){
+      average = (average + array[i].stars) / (i+1);
+    }
+    return Math.ceil(average);
   }
 }

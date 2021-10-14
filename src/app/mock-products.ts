@@ -1,7 +1,7 @@
 import { Product } from "./Product";
 
 export const PRODUCTS: Product[] = [
-    {id: 1, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Product 1', price: 1000, reviews: 
+    {id: 1, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Pineapple', price: 1000, reviews: 
         [
             {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
             {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
@@ -9,7 +9,7 @@ export const PRODUCTS: Product[] = [
         ],
         description: 'Product description'
     },
-    {id: 2, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Product 2', price: 2000, reviews:  
+    {id: 2, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Apple', price: 2000, reviews:  
         [
             {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
             {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
         ],
         description: 'Product description'
     },
-    {id: 3, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Product 3', price: 3000, reviews:  
+    {id: 3, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Kiwi-apple', price: 3000, reviews:  
         [
             {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
             {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
