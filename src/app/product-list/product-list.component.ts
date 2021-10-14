@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
   searchQuery: string = '';
   selectedProduct?: Product;
   products: Product[] = [];
+  searchedProducts: Product[] = [];
 
   constructor(
     public productService: ProductService,
@@ -20,7 +21,7 @@ export class ProductListComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.getProducts();
+    this.getAllProducts();
   }
 
   onSelect(product: Product): void{
@@ -28,8 +29,16 @@ export class ProductListComponent implements OnInit {
     //this.closeProduct = true;
   }
 
-  getProducts(): void {
-    this.productService.getProducts()
+  getAllProducts(): void {
+    this.productService.getAllProducts()
       .subscribe(products => this.products = products);
+  }
+
+  searchProducts(searchQuery: string): void {
+    for(let i= 0; i<this.products.length; i++){
+      if(this.products[i].name.includes(searchQuery) || this.products[i].description.includes(searchQuery)){
+        this.searchedProducts.push(this.products[i]);
+      }
+    }
   }
 }

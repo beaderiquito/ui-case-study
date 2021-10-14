@@ -7,10 +7,11 @@ import { PRODUCTS } from './mock-products';
   providedIn: 'root'
 })
 export class ProductService {
-  getProducts(): Observable<Product []> {
+  getAllProducts(): Observable<Product []> {
     const products = of(PRODUCTS);
     return products;
   }
+  
   getProduct(id: number): Observable<Product>{
     const product = PRODUCTS.find(p => p.id === id)!;
     return of(product);
