@@ -10,7 +10,7 @@ import { SearchService } from '../search.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  showSearchResults = true;
+  showSearchResults = false;
   searchQuery: string = '';
   selectedProduct?: Product;
   products: Product[] = [];
@@ -25,7 +25,10 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.getAllProducts();
     this.searchService.currentSearchInput.subscribe(input => this.searchQuery = input);
-    this.searchProducts(this.searchQuery);
+    console.log(this.searchQuery);
+    if(this.searchQuery.trim() !== ""){
+      this.searchProducts(this.searchQuery);
+    }
   }
 
   onSelect(product: Product): void{
@@ -39,6 +42,7 @@ export class ProductListComponent implements OnInit {
   }
 
   searchProducts(searchQuery: string): void {
+    console.log('entered searchProducts');
     searchQuery = searchQuery.toLowerCase().trim();
     //clear the array products
     this.searchResults.length = 0;
@@ -49,6 +53,7 @@ export class ProductListComponent implements OnInit {
         this.searchResults.push(this.products[i]);
       }
     }
+
     this.products = this.searchResults;
     this.showSearchResults = true;
   }

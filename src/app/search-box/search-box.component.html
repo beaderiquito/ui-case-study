@@ -1,4 +1,9 @@
 <div>
-    <input [(ngModel)]="searchText" type="text"/>
-    <i class="material-icons" (click)="submit()">search</i>
+    <form>
+        <input [formControl]="textField" type="text"/>
+        <a routerLink="" (click)="submit()">
+            <i  class="material-icons" >search</i>
+        </a>
+    </form>
 </div>
+

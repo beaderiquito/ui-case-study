@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { SearchService } from '../search.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-box',
@@ -7,17 +8,17 @@ import { SearchService } from '../search.service';
   styleUrls: ['./search-box.component.scss']
 })
 export class SearchBoxComponent implements OnInit{
-  input: string = '';
-  searchText: string='';
+  textField = new FormControl('')
+  text: string = '';
   
   constructor(private searchService: SearchService) {  }
 
   ngOnInit(){
-    this.searchService.currentSearchInput.subscribe(input => this.input = input);
+    this.searchService.currentSearchInput.subscribe(input => this.text = input);
   }
 
   submit(){
-    this.searchService.updateSearchInput(this.searchText);
+    this.searchService.updateSearchInput(this.textField.value);
   }
 
 }
