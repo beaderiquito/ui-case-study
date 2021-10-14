@@ -10,7 +10,7 @@ import { SearchService } from '../search.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  showSearchResults = false;
+  showSearchResults = true;
   searchQuery: string = '';
   selectedProduct?: Product;
   products: Product[] = [];
