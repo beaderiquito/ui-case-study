@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../Product';
 import { ProductService } from '../product.service';
-
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -11,13 +10,13 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
   //To close list of products:
   //closeProduct: boolean = false;
-
+  searchQuery: string = '';
   selectedProduct?: Product;
   products: Product[] = [];
 
   constructor(
     public productService: ProductService,
-    public router: Router,
+    public router: Router
   ){}
 
   ngOnInit(): void {
