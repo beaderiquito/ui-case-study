@@ -9,7 +9,6 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CartComponent,
     FooterComponent,
     NavbarComponent,
-    HomepageComponent
   ],
   imports: [
     BrowserModule,
