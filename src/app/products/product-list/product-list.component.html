@@ -1,6 +1,6 @@
 <div>
   <h1 *ngIf="showSearchResults" class="row m-5 pl-3">
-    {{ products.length }} matches for "{{ searchQuery }}"
+    {{ products.length }} matches for "{{ searchTerm }}"
   </h1>
   <div class="row m-5">
     <div class="col-sm-4" *ngFor="let product of products">
@@ -11,9 +11,9 @@
           <p class="card-text">₱ {{ product.price }}</p>
           <p class="card-text">
             <small class="text-muted">
-              {{ getAverageStars(product.reviews) }} stars
-              {{ product.reviews.length }} reviews</small
-            >
+              stars
+              reviews
+            </small>
           </p>
         </div>
       </div>
