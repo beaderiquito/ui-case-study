@@ -11,8 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  showSearchResults = false;
-  searchTerm?: string;
+  searchTerm: string = this.searchService.searchTerm;
   selectedProduct?: Product;
   products: Product[] = [];
   toCurrency: any;
@@ -21,7 +20,7 @@ export class ProductListComponent implements OnInit {
     public productService: ProductService,
     public router: Router,
     private route: ActivatedRoute,
-    private searchService: SearchService
+    public searchService: SearchService
   ){}
 
   ngOnInit(): void { 
