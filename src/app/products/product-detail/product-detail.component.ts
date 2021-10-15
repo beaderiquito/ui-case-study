@@ -14,6 +14,7 @@ export class ProductDetailComponent implements OnInit {
   products: Product[] = [];
   product: any;
   average: number = 0;
+  toCurrency: any = 0;
 
   constructor(private _route: ActivatedRoute, private productService: ProductService) { }
 
@@ -22,6 +23,7 @@ export class ProductDetailComponent implements OnInit {
       this.id = params.get('product-id');
     });
 
+    this.toCurrency = this.productService.toCurrency;
     this.productId = Number(this.id);
     this.product = this.productService.getProductById(this.productId);
     this.average = this.productService.getAverageStars(this.product.reviews);

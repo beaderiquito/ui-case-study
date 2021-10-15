@@ -6,7 +6,7 @@
 			</div>
 			<div class="col">	
 				<h3><b>{{product.name}}</b></h3>
-				<p>{{product.price}}</p>
+				<h5><p>{{toCurrency.format(product.price)}}</p></h5>
 				<p>{{product.description}}</p>
 				<p><rating [(ngModel)]="average" [readonly]="true"></rating> ({{product.reviews.length}} Reviews)</p>
 				<button class="btn btn-dark">Add to Cart</button>	
@@ -16,11 +16,15 @@
 </div>
 <div class="container row">
 	<div *ngFor="let review of product.reviews">
-		<div class="col ">
-			<div>{{review.username}}</div>
+		<div class="col">
+			<div class="col">
+				<div>{{review.username}}</div>
+			</div>
+			<div class="col">
+				<rating [(ngModel)]="review.stars" [readonly]="true"></rating>
+			</div>
 			<div>{{review.date}}</div>
 			<div>{{review.content}}</div>
-			<rating [(ngModel)]="review.stars" [readonly]="true"></rating>
 		</div>
 		<br/>
 	</div>
