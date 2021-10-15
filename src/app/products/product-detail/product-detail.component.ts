@@ -13,6 +13,7 @@ export class ProductDetailComponent implements OnInit {
   productId: number = 0;
   products: Product[] = [];
   product: any;
+  average: number = 0;
 
   constructor(private _route: ActivatedRoute, private productService: ProductService) { }
 
@@ -23,9 +24,6 @@ export class ProductDetailComponent implements OnInit {
 
     this.productId = Number(this.id);
     this.product = this.productService.getProductById(this.productId);
-  }
-
-  getAverageStars(array: any){
-    this.productService.getAverageStars(array);
+    this.average = this.productService.getAverageStars(this.product.reviews);
   }
 }

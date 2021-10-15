@@ -69,13 +69,14 @@ export class ProductService {
     return this.products.filter(product => product.name.toLowerCase().includes(searchTerm));
   }
 
-  getAverageStars(product: Product): number{
+  getAverageStars(reviews: any): number{
     let sum: number = 0;
     let average: number = 0;
-    for(let i=0; i<product.reviews.length; i++){
-      sum = (sum + product.reviews[i].stars);
+
+    for(let i=0; i<reviews.length; i++){
+      sum = (sum + reviews[i].stars);
     }
-    average = sum / product.reviews.length;
+    average = sum / reviews.length;
     return Math.ceil(average);
   }
 }
