@@ -11,11 +11,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  showSearchResults = true;
+  showSearchResults = false;
   searchTerm: string = '';
   selectedProduct?: Product;
   products: Product[] = [];
-  searchResults: Product[] = [];
 
   constructor(
     public productService: ProductService,
@@ -24,14 +23,22 @@ export class ProductListComponent implements OnInit {
     private searchService: SearchService,
   ){}
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.getAllProducts;
+  }
 
   onSelect(product: Product): void{
     this.selectedProduct = product;
   }
 
-  getAllProducts(): void { }
+  getAllProducts(): void { 
+    this.products = this.productService.getAllProducts();
+   }
 
   searchProducts(searchQuery: string): void { }
+
+  getAverageStars(reviews: any): number {
+    return this.productService.getAverageStars(reviews);
+  }
 
 }
