@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
   searchTerm: string = '';
   selectedProduct?: Product;
   products: Product[] = [];
+  toCurrency: any;
 
   constructor(
     public productService: ProductService,
@@ -25,6 +26,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void { 
     this.getAllProducts();
+    this.toCurrency = this.productService.toCurrency;
   }
 
   onSelect(product: Product): void{
@@ -40,5 +42,7 @@ export class ProductListComponent implements OnInit {
   getAverageStars(reviews: any): number {
     return this.productService.getAverageStars(reviews);
   }
+
+  
 
 }

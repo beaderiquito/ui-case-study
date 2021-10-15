@@ -5,7 +5,7 @@
         <a><img [src]="product.photo" class="card-img-top" alt="Product Photo"  width="300px" height="300px"/></a>
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">₱ {{ product.price }}<br>
+          <p class="card-text">{{ toCurrency.format(product.price) }}<br>
             <small class="text-muted">{{getAverageStars(product.reviews)}} stars {{this.product.reviews.length}} reviews</small>
           </p>
         </div>
