@@ -1,4 +1,4 @@
-import { Product } from "./Product";
+import { Product } from "./Product"
 
 export const PRODUCTS: Product[] = [
     {id: 1, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Pineapple', price: 1000, reviews: 
