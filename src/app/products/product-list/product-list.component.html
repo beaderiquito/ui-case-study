@@ -2,7 +2,7 @@
   <div class="row m-5">
     <div class="col-4" *ngFor="let product of products">
       <div class="card mt-5">
-        <a><img [src]="product.photo" class="card-img-top" alt="Product Photo"  width="300px" height="300px"/></a>
+        <a routerLink="products/product-details/{{product.id}}"><img [src]="product.photo" class="card-img-top" alt="Product Photo"  width="300px" height="300px"/></a>
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">{{ toCurrency.format(product.price) }}<br>
