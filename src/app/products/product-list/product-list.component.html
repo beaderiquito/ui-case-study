@@ -5,14 +5,15 @@
 </div>
 <div class="container mb-5">
   <div class="row w-100">
-    <div class="col col-4 " *ngFor="let product of products">
+    <div id="card-container" class="col col-4 " *ngFor="let product of products">
       <div class="card mt-5">
         <a routerLink="/products/product-details/{{product.id}}"><img [src]="product.photo" class="card-img-top" alt="Product Photo"  width="300px" height="300px"/>
           <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ toCurrency.format(product.price) }}<br>
-              <small class="text-muted">{{getAverageStars(product.reviews)}} stars ({{this.product.reviews.length}} reviews)</small>
-            </p>
+            <div class="card-text">
+              <span>{{toCurrency.format(product.price)}}</span><br>
+              <span>{{getAverageStars(product.reviews)}} stars ({{this.product.reviews.length}} reviews)</span>
+            </div>
           </div>
         </a>
       </div>
