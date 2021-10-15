@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 90px;">
 	<div *ngIf="product">
-		<div class="row">
+		<div class="row m-5">
 			<div class="col">
 				<img [src]="product.photo" style="width:70%">
 				<button>Add to Cart</button>
@@ -8,17 +8,21 @@
 			<div class="col">	
 				<h3><b>{{product.name}}</b></h3>
 				<p>{{product.price}}</p>
-				<p>{{getAverageStars(product.reviews)}} stars ({{product.reviews.length}} Reviews)</p>
 				<p>{{product.description}}</p>
+				<p> ({{product.reviews.length}} Reviews)</p>
+				
 			</div>
 		</div>
 	</div>
-    <div class="container">
-        <div *ngFor="let review of product.reviews">
-            <div>{{review.username}}</div>
-            <div>{{review.date}}</div>
-            <div>{{review.content}}</div>
-            <rating [(ngModel)]="review.stars" [readonly]="true"></rating>
-        </div>
-    </div>
+</div>
+<div class="container row">
+	<div *ngFor="let review of product.reviews">
+		<div class="col ">
+			<div>{{review.username}}</div>
+			<div>{{review.date}}</div>
+			<div>{{review.content}}</div>
+			<rating [(ngModel)]="review.stars" [readonly]="true"></rating>
+		</div>
+		<br/>
+	</div>
 </div>

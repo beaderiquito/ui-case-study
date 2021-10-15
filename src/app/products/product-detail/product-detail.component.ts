@@ -22,28 +22,10 @@ export class ProductDetailComponent implements OnInit {
     });
 
     this.productId = Number(this.id);
-    this.getProductDetails();
-  }
-
-  getAllProducts(): void {
-    this.productService.getAllProducts()
-      .subscribe(products => this.products = products);
-    this.products = this.products;
-  }
-
-  getProductDetails(): void {
-    this.productService.getProduct(this.productId)
-      .subscribe(product => this.product = product);
-    this.product = this.product;
+    this.product = this.productService.getProductById(this.productId);
   }
 
   getAverageStars(array: any){
-    let sum: number = 0;
-    let average: number = 0;
-    for(let i=0; i<array.length; i++){
-      sum = (sum + array[i].stars);
-    }
-    average = sum / array.length;
-    return Math.ceil(average);
+    this.productService.getAverageStars(array);
   }
 }
