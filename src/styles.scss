@@ -8,3 +8,21 @@
 
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+nav {
+	background: white;
+	padding: 0;
+	border-bottom: 1px solid;
+}
+/*a {
+	&:hover {
+		background: ;
+        color: ;
+	}
+}*/
+
+.container{
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+}
