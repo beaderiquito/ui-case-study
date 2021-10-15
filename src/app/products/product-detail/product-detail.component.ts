@@ -29,12 +29,8 @@ export class ProductDetailComponent implements OnInit {
     this.product = this.productService.getProductById(this.productId);
     this.average = this.productService.getAverageStars(this.product.reviews);
   }
-
-  addProduct(product:any){
-   let prodID = this.product.id;
-   let prodName = this.product.name;
-   let prodPrice = this.product.price;
-   let prodPhoto = this.product.photo;
-    return this.cartService.addToCart(prodID,prodName,prodPrice,prodPhoto);
+  
+  addProduct(){
+    return this.cartService.addToCart(this.productId, this.product.name, this.product.price, this.product.photo);
   }//addProduct
 }

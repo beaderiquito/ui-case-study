@@ -1,5 +1,5 @@
 
-<div class = "cartproduct">
+<div class = "cartproduct"><br/><br/>
     <h3>My Cart {{cart.length}}</h3>
     <div class= "row" *ngFor="let product of cart">
         <!--Product Picture-->
@@ -32,6 +32,10 @@
             </button>
         </div>
     </div>
+    <div>
+        <h2 >Your Cart is Empty</h2>
+    </div>
+    <input  type="button" value="Start Shopping"/> 
 </div>
 
 <!--Delete Confirmation-->

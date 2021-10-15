@@ -9,7 +9,6 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
   
   cart: any[]=[];
-  
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
@@ -19,7 +18,9 @@ export class CartComponent implements OnInit {
     this.cart = this.cartService.viewCart();
   }
   deleteProduct(){
-
+    alert(this.cart[0]);
+    return this.cartService.removeProduct(this.cart[0]);
+    
   }
 
 }
