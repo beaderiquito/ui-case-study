@@ -1,24 +1,23 @@
 import { Component, OnInit} from '@angular/core';
 import { SearchService } from '../search.service';
 import { FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-box',
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss']
 })
-export class SearchBoxComponent implements OnInit{
-  textField = new FormControl('')
-  text: string = '';
-  
-  constructor(private searchService: SearchService) {  }
-
-  ngOnInit(){
-    this.searchService.currentSearchInput.subscribe(input => this.text = input);
-  }
+export class SearchBoxComponent{
+  searchTerm: string = '';
+  constructor(
+    private searchService: SearchService,
+    private route: ActivatedRoute,
+    ) {  }
 
   submit(){
-    this.searchService.updateSearchInput(this.textField.value);
+    this.searchService.updateSearchTerm(this.searchTerm);
+    console.log(this.searchService.searchTerm);
+    this.searchTerm = '';
   }
-
 }

@@ -2,7 +2,7 @@
 
 <form class="form-inline">
     <div class="input-group flex-grow-1">
-        <input type="text" class="form-control" placeholder="Search for products">
-        <button class="btn btn-success" type="submit">GO</button>
+        <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="Search for products" name="searchTerm">
+        <button class="btn btn-success" type="submit" (click)="submit()">GO</button>
     </div>
 </form>
