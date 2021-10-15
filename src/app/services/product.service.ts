@@ -5,6 +5,12 @@ import { Product } from '../Product';
   providedIn: 'root'
 })
 export class ProductService {
+  
+  toCurrency: any = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'PHP',
+  });
+
   products: Product[] = [
     {id: 1, photo: '../assets/img/products/plain-butter-croissant.jpg', name: 'Plain Butter Croissant', price: 105, reviews: 
       [
