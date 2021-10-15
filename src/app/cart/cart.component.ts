@@ -16,12 +16,6 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  
-  
-
-//   deleteProduct(product:string){
-//     this.state.deleteFromCart('product-id');
-//   }
 
 }
 
