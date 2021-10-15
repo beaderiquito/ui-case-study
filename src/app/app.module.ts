@@ -32,6 +32,6 @@ import { RatingModule } from 'ngx-bootstrap/rating';
     RatingModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent, ProductListComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,23 +1,31 @@
 import { Component, OnInit} from '@angular/core';
 import { SearchService } from '../search.service';
-import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-box',
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.scss']
 })
-export class SearchBoxComponent{
+export class SearchBoxComponent implements OnInit{
   searchTerm: string = '';
   constructor(
     private searchService: SearchService,
     private route: ActivatedRoute,
+    private router: Router
     ) {  }
 
-  submit(){
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      if(params.searchTerm)
+        this.searchTerm = params.searchTerm;
+    })
+  }
+
+  submit(): void{
     this.searchService.updateSearchTerm(this.searchTerm);
     console.log(this.searchService.searchTerm);
+    this.router.navigateByUrl('/products/' + this.searchTerm);
     this.searchTerm = '';
   }
 }
