@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div *ngFor="let review of product.reviews">
-			<div class="row m-5">
+			<div class="row m-5 p-3 card">
 				<div class="col-12">
 					<div class="row">
 						<div class="col-6">
@@ -30,7 +30,7 @@
 					</div>
 				</div>
 				<div class="col-12">
-					{{review.content}}
+					<br/>{{review.content}}
 				</div>
 				<div class="col-12">
 					<rating [(ngModel)]="review.stars" [readonly]="true"></rating>

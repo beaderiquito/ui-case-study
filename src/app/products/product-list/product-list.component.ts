@@ -11,22 +11,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  showSearchResults = false;
-  searchTerm: string = '';
+  searchTerm: string = this.searchService.searchTerm;
   selectedProduct?: Product;
   products: Product[] = [];
   toCurrency: any;
+  header: string = '';
 
   constructor(
     public productService: ProductService,
     public router: Router,
-    private route: ActivatedRoute,
-    private searchService: SearchService,
+    public route: ActivatedRoute,
+    public searchService: SearchService
   ){}
 
-  ngOnInit(): void { 
-    this.getAllProducts();
+  ngOnInit(): void {
+    console.log('INIT'); 
     this.toCurrency = this.productService.toCurrency;
+    this.route.params.subscribe(params => {
+      if(params.searchTerm){
+        this.products = this.productService.getAllProducts().filter(product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()));
+        this.header = `${this.products.length} matches for "${params.searchTerm.toLowerCase()}"`;
+      }
+      else{
+        this.getAllProducts();
+        this.header = 'All Products';
+      }
+     })
   }
 
   onSelect(product: Product): void{
@@ -35,14 +45,10 @@ export class ProductListComponent implements OnInit {
 
   getAllProducts(): void { 
     this.products = this.productService.getAllProducts();
-   }
-
-  searchProducts(searchQuery: string): void { }
+  }
 
   getAverageStars(reviews: any): number {
     return this.productService.getAverageStars(reviews);
   }
-
-  
 
 }

@@ -10,7 +10,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class SearchBoxComponent implements OnInit{
   searchTerm: string = '';
   constructor(
-    private searchService: SearchService,
+    public searchService: SearchService,
     private route: ActivatedRoute,
     private router: Router
     ) {  }
@@ -26,6 +26,5 @@ export class SearchBoxComponent implements OnInit{
     this.searchService.updateSearchTerm(this.searchTerm);
     console.log(this.searchService.searchTerm);
     this.router.navigateByUrl('/products/' + this.searchTerm);
-    this.searchTerm = '';
   }
 }

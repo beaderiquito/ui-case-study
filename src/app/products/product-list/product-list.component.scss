@@ -1,3 +1,29 @@
+#header {
+	margin-top: 130px;
+	padding-left: 30px;
+	max-height: 20px;
+}
+
 .card {
-	min-height: 450px;
+	min-height: 480px;
+	padding: 0px;
+}
+
+#card-container {
+	.card{
+		&:hover {
+			background-color: grey;
+			.card-body {
+				color: honeydew;
+			}
+			.card-image-top{
+				opacity: 1;
+			}
+		}
+	} 
+}
+
+a {
+	text-decoration: none;
+	color: black;
 }
