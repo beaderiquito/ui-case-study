@@ -6,7 +6,7 @@ import { Product } from '../Product';
 })
 export class ProductService {
   products: Product[] = [
-    {id: 1, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Pineapple', price: 1000, reviews: 
+    {id: 1, photo: '../assets/img/products/plain-butter-croissant.jpg', name: 'Plain Butter Croissant', price: 105, reviews: 
       [
           {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
           {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
@@ -14,7 +14,7 @@ export class ProductService {
       ],
       description: 'Product description'
   },
-  {id: 2, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Apple', price: 2000, reviews:  
+  {id: 2, photo: '../assets/img/products/apple-danish.jpg', name: 'Apple Danish', price: 125, reviews:  
       [
           {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
           {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 2},
@@ -22,7 +22,7 @@ export class ProductService {
       ],
       description: 'Product description'
   },
-  {id: 3, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Kiwi-apple', price: 3000, reviews:  
+  {id: 3, photo: '../assets/img/products/french-toast.jpg', name: 'French Toast', price: 150, reviews:  
       [
           {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
           {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
@@ -30,7 +30,7 @@ export class ProductService {
       ],
       description: 'Product description'
   },
-  {id: 4, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Product 4', price: 4000, reviews:  
+  {id: 4, photo: '../assets/img/products/four-cheese-flatbread.jpg', name: 'Four Cheese Flatbread', price: 130, reviews:  
       [
           {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
           {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
@@ -38,7 +38,7 @@ export class ProductService {
       ],
       description: 'Product description'
   },
-  {id: 5, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Product 5', price: 5000, reviews:  
+  {id: 5, photo: '../assets/img/products/cinnamon-roll.jpg', name: 'Cinnamon Roll', price: 120, reviews:  
       [
           {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
           {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
@@ -46,7 +46,7 @@ export class ProductService {
       ],
       description: 'Product description'
   },
-  {id: 6, photo: 'https://image.freepik.com/free-psd/arrangement-colorful-mock-up-doypack_23-2149015936.jpg', name: 'Product 6', price: 6000, reviews:  
+  {id: 6, photo: '../assets/img/products/white-chocolate-macademia-cookie.jpg', name: 'White Chocolate Macademia Cookie', price: 95, reviews:  
       [
           {username: 'username1', date: 'April 20, 2021', content: 'Excellent!', stars: 5},
           {username: 'username2', date: 'April 20, 2021', content: 'Ok quality.', stars: 3},
