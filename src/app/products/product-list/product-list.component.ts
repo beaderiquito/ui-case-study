@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
   showSearchResults = false;
-  searchTerm: string = '';
+  searchTerm?: string;
   selectedProduct?: Product;
   products: Product[] = [];
   toCurrency: any;
@@ -21,12 +21,17 @@ export class ProductListComponent implements OnInit {
     public productService: ProductService,
     public router: Router,
     private route: ActivatedRoute,
-    private searchService: SearchService,
+    private searchService: SearchService
   ){}
 
   ngOnInit(): void { 
-    this.getAllProducts();
     this.toCurrency = this.productService.toCurrency;
+    this.route.params.subscribe(params => {
+      if(params.searchTerm)
+        this.products = this.productService.getAllProducts().filter(product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()))
+      else
+        this.getAllProducts();
+     })
   }
 
   onSelect(product: Product): void{
@@ -35,14 +40,10 @@ export class ProductListComponent implements OnInit {
 
   getAllProducts(): void { 
     this.products = this.productService.getAllProducts();
-   }
-
-  searchProducts(searchQuery: string): void { }
+  }
 
   getAverageStars(reviews: any): number {
     return this.productService.getAverageStars(reviews);
   }
-
-  
 
 }
