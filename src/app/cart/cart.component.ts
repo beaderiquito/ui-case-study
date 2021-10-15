@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { Product } from '../Product';
 
 @Component({
   selector: 'app-cart',
@@ -13,13 +14,14 @@ export class CartComponent implements OnInit {
   constructor(private state:CartService) { }
 
   ngOnInit(): void {
-    this.state.cart$.subscribe((cart: string[]) => {
-      this.cart = cart;
-    });
   }
+  
+  
+  
 
-  add(){
-    //Call this event whenever an item is added to cart.
-  }
+//   deleteProduct(product:string){
+//     this.state.deleteFromCart('product-id');
+//   }
 
 }
+

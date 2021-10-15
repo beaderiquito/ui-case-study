@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../cart.service';
 import { Product } from '../Product';
 import { ProductService } from '../product.service';
 
@@ -14,7 +15,7 @@ export class ProductDetailComponent implements OnInit {
   products: Product[] = [];
   product: any;
 
-  constructor(private _route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private _route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this._route.paramMap.subscribe(params => {
@@ -23,6 +24,7 @@ export class ProductDetailComponent implements OnInit {
 
     this.productId = Number(this.id);
     this.getProductDetails();
+
   }
 
   getAllProducts(): void {
@@ -46,4 +48,12 @@ export class ProductDetailComponent implements OnInit {
     average = sum / array.length;
     return Math.ceil(average);
   }
+
+  addProduct(){
+    return this.cartService.addToCart(this.product.id, this.product.name, this.product.price);
+  }//addProduct
 }
+  
+
+  
+ 
