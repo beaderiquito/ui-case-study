@@ -3,13 +3,13 @@
 		<div class="row m-5">
 			<div class="col">
 				<img [src]="product.photo" style="width:70%">
-				<button>Add to Cart</button>
 			</div>
 			<div class="col">	
 				<h3><b>{{product.name}}</b></h3>
 				<p>{{product.price}}</p>
 				<p>{{product.description}}</p>
-				<p><rating [(ngModel)]="average" [readonly]="true"></rating> ({{product.reviews.length}} Reviews)</p>	
+				<p><rating [(ngModel)]="average" [readonly]="true"></rating> ({{product.reviews.length}} Reviews)</p>
+				<button class="btn btn-dark">Add to Cart</button>	
 			</div>
 		</div>
 	</div>
