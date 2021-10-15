@@ -15,21 +15,27 @@ export class ProductListComponent implements OnInit {
   selectedProduct?: Product;
   products: Product[] = [];
   toCurrency: any;
+  header: string = '';
 
   constructor(
     public productService: ProductService,
     public router: Router,
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
     public searchService: SearchService
   ){}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    console.log('INIT'); 
     this.toCurrency = this.productService.toCurrency;
     this.route.params.subscribe(params => {
-      if(params.searchTerm)
-        this.products = this.productService.getAllProducts().filter(product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()))
-      else
+      if(params.searchTerm){
+        this.products = this.productService.getAllProducts().filter(product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()));
+        this.header = `${this.products.length} matches for "${params.searchTerm.toLowerCase()}"`;
+      }
+      else{
         this.getAllProducts();
+        this.header = 'All Products';
+      }
      })
   }
 
