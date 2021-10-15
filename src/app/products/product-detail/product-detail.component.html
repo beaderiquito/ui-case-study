@@ -9,7 +9,7 @@
 				<h5><p>{{toCurrency.format(product.price)}}</p></h5>
 				<p><rating [(ngModel)]="average" [readonly]="true"></rating> ({{product.reviews.length}} Reviews)</p>
 				<p>{{product.description}}</p>
-				<button class="btn btn-dark">Add to Cart</button>	
+				<button class="btn btn-dark" (click) = "addProduct(product)">Add to Cart</button>	
 			</div>
 		</div>
 		<div class="row m-5">

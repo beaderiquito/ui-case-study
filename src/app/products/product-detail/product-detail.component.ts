@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../Product';
 import { ProductService } from 'src/app/services/product.service';
-import { CartService } from 'src/app/cart.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -30,7 +30,11 @@ export class ProductDetailComponent implements OnInit {
     this.average = this.productService.getAverageStars(this.product.reviews);
   }
 
-  addProduct(){
-    return this.cartService.addToCart(this.product.id, this.product.name, this.product.price);
+  addProduct(product:any){
+   let prodID = this.product.id;
+   let prodName = this.product.name;
+   let prodPrice = this.product.price;
+   let prodPhoto = this.product.photo;
+    return this.cartService.addToCart(prodID,prodName,prodPrice,prodPhoto);
   }//addProduct
 }
