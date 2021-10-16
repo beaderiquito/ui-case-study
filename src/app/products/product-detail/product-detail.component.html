@@ -1,41 +1,43 @@
-<div class="container" style="margin-top: 90px;">
-	<div *ngIf="product">
-		<div class="row m-5">
-			<div class="col-sm-6 text-center">
-				<img [src]="product.photo" style="width:70%">
+<main>
+	<div class="container">
+		<div *ngIf="product">
+			<div class="row m-5">
+				<div class="col-sm-6 text-center">
+					<img [src]="product.photo" style="width:70%">
+				</div>
+				<div class="col-sm-6">	
+					<h3 class="text-center"><b>{{product.name}}</b></h3>
+					<h5><p>{{toCurrency.format(product.price)}}</p></h5>
+					<p><rating [(ngModel)]="average" [readonly]="true"></rating> ({{product.reviews.length}} Reviews)</p>
+					<p>{{product.description}}</p>
+					<button class="btn btn-dark" (click) = "addProduct()">Add to Cart</button>	
+				</div>
 			</div>
-			<div class="col-sm-6">	
-				<h3 class="text-center"><b>{{product.name}}</b></h3>
-				<h5><p>{{toCurrency.format(product.price)}}</p></h5>
-				<p><rating [(ngModel)]="average" [readonly]="true"></rating> ({{product.reviews.length}} Reviews)</p>
-				<p>{{product.description}}</p>
-				<button class="btn btn-dark" (click) = "addProduct()">Add to Cart</button>	
-			</div>
-		</div>
-		<div class="row m-5">
-			<div class="col-12">
-				<h3>Ratings and Reviews ({{product.reviews.length}})</h3>
-			</div>
-		</div>
-		<div *ngFor="let review of product.reviews">
-			<div class="row m-5 p-3 card">
+			<div class="row m-5">
 				<div class="col-12">
-					<div class="row">
-						<div class="col-6">
-							<b>{{review.username}}</b>
-						</div>
-						<div class="col-6 text-right grey">
-							{{review.date}}
+					<h3>Ratings and Reviews ({{product.reviews.length}})</h3>
+				</div>
+			</div>
+			<div *ngFor="let review of product.reviews">
+				<div class="row m-5 p-3 card">
+					<div class="col-12">
+						<div class="row">
+							<div class="col-6">
+								<b>{{review.username}}</b>
+							</div>
+							<div class="col-6 text-right grey">
+								{{review.date}}
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-12">
-					<br/>{{review.content}}
-				</div>
-				<div class="col-12">
-					<rating [(ngModel)]="review.stars" [readonly]="true"></rating>
+					<div class="col-12">
+						<br/>{{review.content}}
+					</div>
+					<div class="col-12">
+						<rating [(ngModel)]="review.stars" [readonly]="true"></rating>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</main>
