@@ -17,9 +17,9 @@ export class CartComponent implements OnInit {
   viewCart(): void {
     this.cart = this.cartService.viewCart();
   }
-  deleteProduct(){
-    alert(this.cart[0]);
-    return this.cartService.removeProduct(this.cart[0]);
+  deleteProduct(index: any){
+    alert('Send: ' + index);
+    return this.cartService.removeProduct(index);
     
   }
 
