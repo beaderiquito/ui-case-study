@@ -9,7 +9,38 @@
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
+body {
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 main{
 	margin-top: 160px;
 	min-height: 300px;
+}
+
+nav {
+	background-color: whitesmoke;
+	position: sticky;
+}
+
+a {
+	text-decoration: none;
+	color: #00704A; //change color to match logo and search bar button
+	
+	&:hover{
+		color: #679267; //change color to match search bar button upon hover
+	}
+}
+
+@media screen and (max-width: 500px) { //added for responsive design
+	.navbar{
+		a {
+			float: none;
+			display: block;
+		}
+	} 
+
+	main{
+		margin-top: 250px;
+	}
 }

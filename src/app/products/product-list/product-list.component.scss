@@ -1,7 +1,6 @@
 #product-list-header {
 	padding-left: 30px;
 }
-
 .card {
 	min-height: 480px;
 	padding: 0px;
@@ -10,9 +9,9 @@
 #card-container {
 	.card{
 		&:hover {
-			background-color: grey;
+			background-color: #679267;
 			.card-body {
-				color: honeydew;
+				color: white;
 			}
 			.card-image-top{
 				opacity: 1;
