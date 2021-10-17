@@ -1,0 +1,37 @@
+@import "../../styles.scss";
+
+.navbar {
+    background-color: $primary-color !important;
+    font-family: $font-regular;
+    color: white;
+    position: fixed top;
+    height: 100px;
+    vertical-align: center;
+}
+
+/*#my-cart {
+    font-family: $font-bold;
+    color: $dark-color;
+}*/
+
+.photo {
+    filter: invert(24%) sepia(6%) saturate(5029%) hue-rotate(329deg) brightness(93%) contrast(82%);
+    vertical-align: top;
+}
+
+.cart > a {
+
+    font-family: $font-bold;
+    text-decoration: none;
+    color: $dark-color;
+    
+    &:hover {
+
+        color: $secondary-color;
+
+        .photo{
+            filter: brightness(0) saturate(100%);
+            filter: invert(93%) sepia(89%) saturate(591%) hue-rotate(305deg) brightness(101%) contrast(78%);
+        }
+    }
+}

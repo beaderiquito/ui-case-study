@@ -9,20 +9,39 @@
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
-/*nav {
-	background: white;
-	padding: 0;
-	border-bottom: 1px solid;
-}*/
-/*a {
-	&:hover {
-		background: ;
-        color: ;
-	}
-}*/
-
-.container{
-    margin:0 auto;
-    display: flex;
-    justify-content: space-between;
+/*Importing fonts from local file. */
+@font-face {
+    font-family: 'Regular';
+    src: url('assets/fonts/texgyreadventor-bold.otf');
 }
+
+@font-face {
+    font-family: 'Light';
+    src: url('assets/fonts/texgyreadventor-regular.otf');
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url('assets/fonts/Uni Sans Heavy.otf');
+}
+
+/* ----Variables---- */
+$primary-color:  #c38452;
+$secondary-color: #e3c099;
+$highlight-color: #a1785c;
+$dark-color: #6b3e2e;
+$font-regular: 'Regular';
+$font-light: 'Light';
+$font-bold: 'Bold';
+
+
+body {
+    font-family: $font-regular;
+    letter-spacing: 2px;
+    background-color: $secondary-color;
+    text-decoration: none;
+    color: $dark-color;
+}
+
+
+

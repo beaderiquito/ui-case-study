@@ -1,0 +1,64 @@
+@import "../../styles.scss";
+
+.footer {
+    font-family: $font-regular;
+    background-color: $primary-color;
+    color: $dark-color;
+    h3{
+        font-family: $font-bold;
+        color: white;
+    }
+}
+
+.email > a {
+    text-decoration: none;
+    color: $dark-color;
+    font-style: italic;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.list-inline-items {
+    a {
+        color: $dark-color; 
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.btn-link {
+
+    filter: invert(24%) sepia(6%) saturate(5029%) hue-rotate(329deg) brightness(93%) contrast(82%);
+    
+    &:hover {
+        filter: brightness(0) saturate(100%);
+        filter: invert(93%) sepia(89%) saturate(591%) hue-rotate(305deg) brightness(101%) contrast(78%);
+    }
+}
+
+
+.footer-links {
+    a {
+        color: $dark-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    } 
+}
+
+.copyright {
+    color: $dark-color;
+    background-color: $highlight-color !important;
+    
+    &.a:hover {
+        text-decoration: underline;
+    }
+}
+
