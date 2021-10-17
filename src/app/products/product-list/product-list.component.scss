@@ -1,8 +1,26 @@
-#header {
-	margin-top: 130px;
+#product-list-header {
 	padding-left: 30px;
-	max-height: 20px;
 }
 .card {
-	min-height: 450px;
+	min-height: 480px;
+	padding: 0px;
+}
+
+#card-container {
+	.card{
+		&:hover {
+			background-color: #679267;
+			.card-body {
+				color: white;
+			}
+			.card-image-top{
+				opacity: 1;
+			}
+		}
+	} 
+}
+
+a {
+	text-decoration: none;
+	color: black;
 }

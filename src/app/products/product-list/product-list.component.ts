@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../../Product';
 import { ProductService } from 'src/app/services/product.service';
-import { SearchService } from '../../search.service';
+import { SearchService } from 'src/app/services/search.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,26 +11,31 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  showSearchResults = false;
-  searchTerm?: string;
+  searchTerm: string = this.searchService.searchTerm;
   selectedProduct?: Product;
   products: Product[] = [];
   toCurrency: any;
+  header: string = '';
 
   constructor(
     public productService: ProductService,
     public router: Router,
-    private route: ActivatedRoute,
-    private searchService: SearchService
+    public route: ActivatedRoute,
+    public searchService: SearchService
   ){}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    console.log('INIT'); 
     this.toCurrency = this.productService.toCurrency;
     this.route.params.subscribe(params => {
-      if(params.searchTerm)
-        this.products = this.productService.getAllProducts().filter(product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()))
-      else
+      if(params.searchTerm){
+        this.products = this.productService.getAllProducts().filter(product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()));
+        this.header = `${this.products.length} matches for "${params.searchTerm.toLowerCase()}"`;
+      }
+      else{
         this.getAllProducts();
+        this.header = 'All Products';
+      }
      })
   }
 
