@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../Product';
+import { PRODUCTS } from '../mock-products';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  products = PRODUCTS;
 
   toCurrency: any = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'PHP',
   });
+<<<<<<< HEAD
 
   products: Product[] = [
   {
@@ -146,6 +149,9 @@ export class ProductService {
       stars: 1}]
   }]
 
+=======
+ 
+>>>>>>> 102af3127a6bac58223eb5186179d944a88dc2fc
   getAllProducts(): Product[] {
     return this.products;
   }

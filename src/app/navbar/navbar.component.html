@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+<nav class="navbar navbar-expand-md fixed-top">
   <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
-    <li class="nav-item col-sm-3">
+    <li class="nav-item">
       <a routerLink="/products">
         <img
           class="navbar-brand"
@@ -10,11 +10,11 @@
         />
       </a>
     </li>
-    <li class="col-sm-6">
+    <li class="nav-item w-50">
       <app-search-box></app-search-box>
     </li>
-    <li class="nav-item col-sm-3 text-end pr-5">
-      <a class="nav-link" id="my-cart" routerLink="/cart">MY CART</a>
+    <li class="nav-item text-end pr-5">
+      <a class="nav-link" id="my-cart" routerLink="/cart"><h3>My Cart</h3></a>
     </li>
   </ul>
 </nav>
