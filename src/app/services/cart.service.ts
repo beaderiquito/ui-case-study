@@ -36,19 +36,14 @@ myCart: any[] = [];
       }//if cart has no item
     
   }//add to cart
-
+  
   removeProduct(productToDelete: any){
-     alert('Received: ' + productToDelete);
       for(let i=0; i<this.myCart.length; i++){
-        alert(this.myCart[i]);
-        alert(productToDelete);
           if(i == productToDelete)
         {
           this.myCart.splice(i,1);
         }
      }//for
-      
-  
   }//removeProduct
 
   viewCart(): any[] {

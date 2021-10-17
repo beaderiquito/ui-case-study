@@ -18,7 +18,7 @@ export class ProductService {
     name: 'Plain Butter Croissant',
     price: 105,
     description: 'Our croissant is a buttery, crescent-shaped French pastry. Enjoy this light, flaky, and delicately sweet croissant freshly made everyday. Enjoy one with a cup of coffee — to boost your productivity while enjoying this delicious treat.',
-    reviews: [
+    reviews: [    
     {
       username: 'username1', 
       date: 'April 20, 2021', 

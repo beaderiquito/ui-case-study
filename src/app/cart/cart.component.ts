@@ -7,21 +7,22 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  
+ 
   cart: any[]=[];
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
     this.viewCart();
   }
+
   viewCart(): void {
     this.cart = this.cartService.viewCart();
   }
+
   deleteProduct(index: any){
-    alert('Send: ' + index);
     return this.cartService.removeProduct(index);
-    
   }
+
 
 }
 
