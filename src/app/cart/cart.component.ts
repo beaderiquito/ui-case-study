@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
   total = 0;
 
       constructor(private cartService:CartService, private modalService: BsModalService, private productService: ProductService) { }
-  
+
       ngOnInit(): void {
         this.viewCart();
         this.toCurrency = this.productService.toCurrency;
@@ -27,7 +27,7 @@ export class CartComponent implements OnInit {
         this.modalRef = this.modalService.show(template);
       }
       
-      //**Get items of cart*//
+      //**Get updated items of cart*//
       viewCart(): void {
         this.cart = this.cartService.viewCart();
         this.total = this.cartService.total;

@@ -11,14 +11,15 @@ export class CartService {
   productQuantity = 1;
   myCart: any[] = [];
   total = 0;
-  
+
+ 
   addToCart(productID: any, productName: any, productPrice: number, productPhoto: string){
       
     if (this.myCart.length>0){
       
         for(let i=0; 0<this.myCart.length;i++){
           if (productID == this.myCart[i][0]) {
-                this.myCart[i][2] += productPrice;
+                this.myCart[i][2] = productPrice;
                 this.myCart[i][3] += 1;
                 this.addedToCart(productName);
                 break;
@@ -59,7 +60,8 @@ export class CartService {
       positionClass: 'toast-bottom-right'
     });
   }
-
+  
+  //** Total Price Computation */
   computeTotal(cart: any): number {
     let price = 0;
     let quantity = 0;
