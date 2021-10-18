@@ -57,4 +57,18 @@ export class CartService {
     });
   }
 
+  computeTotal(cart: any): number {
+    let price = 0;
+    let quantity = 0;
+    let total = 0;
+
+    for (let product of cart) {
+      price = product[2];
+      quantity = product[3];
+      total += price * quantity;
+    }
+  
+    return total;
+  }
+
 }//Class

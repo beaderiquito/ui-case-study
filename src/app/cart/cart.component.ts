@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   modalRef?: BsModalRef;
   cart: any[]=[];
   toCurrency: any = 0;
+  total = 0;
   constructor(private cartService:CartService, private modalService: BsModalService, private productService: ProductService) { }
   
   confirmationMessage(template: TemplateRef<any>) {
@@ -19,6 +20,7 @@ export class CartComponent implements OnInit {
   }
   ngOnInit(): void {
     this.viewCart();
+    this.total = this.cartService.computeTotal(this.cart);
     this.toCurrency = this.productService.toCurrency;
   }
 
@@ -34,7 +36,5 @@ export class CartComponent implements OnInit {
     this.modalRef?.hide();
     return this.cartService.removeProduct(index);
   }
-
-
 }
 
