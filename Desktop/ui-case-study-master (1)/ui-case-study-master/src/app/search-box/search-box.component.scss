@@ -1,0 +1,38 @@
+@import "../../styles.scss";
+
+
+
+input[type=text] {
+	padding: 5px 12px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	background-color: white;
+	background-image: url('../../assets/img/search.svg');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+	width: 80%;
+	
+	&:focus{
+		border-color: $secondary-color;
+		border-width: 4px;
+	}
+}
+
+.search-btn {
+	
+	color: white;
+	background-color: $dark-color;
+	border: none;
+	border-radius: 20px;
+	width: 60px;
+
+	&:hover {
+		color: $primary-color;
+		background-color: white;
+		border-width: 5px;
+		border-color: $primary-color;
+		box-sizing: border-box;
+		
+	}
+}

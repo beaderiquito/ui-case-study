@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+/* Importing Toast SCSS file. */
+@import '~ngx-toastr/toastr-bs4-alert';
+
+/*Importing fonts from local file. */
+@font-face {
+    font-family: 'Regular';
+    src: url('assets/fonts/texgyreadventor-bold.otf');
+}
+
+@font-face {
+    font-family: 'Light';
+    src: url('assets/fonts/texgyreadventor-regular.otf');
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url('assets/fonts/Uni Sans Heavy.otf');
+}
+
+/* ----Variables---- */
+//$primary-color:  #c38452;
+//$secondary-color: #e3c099;
+//$highlight-color: #a1785c;
+//$dark-color: #6b3e2e;
+
+//$highlight-color:#795644;
+//$primary-color:#a1785c;
+
+
+$primary-color:  #df9c60;
+//$secondary-color: #ebc186;
+$highlight-color: #b9480b;
+$dark-color: #9a2e04;
+
+//$secondary-color:white;
+$card-color: #e3c099;
+//$card-color: #df9c60;
+$secondary-color: #f4dab5;
+
+$font-regular: 'Regular';
+$font-light: 'Light';
+$font-bold: 'Bold';
+
+
+body {
+    font-family: $font-regular;
+    letter-spacing: 2px;
+    background-color: $secondary-color;
+    text-decoration: none;
+    color: $dark-color;
+}
+
+main {
+    font-family: $font-regular;
+    color: $dark-color;
+    padding-top: 120px;
+    //background-color: $secondary-color;
+    background-color: white;;
+    padding-bottom: 30px;
+    min-height: 960px;
+}
+
+@media screen and (max-width: 500px) { //added for responsive design
+	.navbar{
+		a {
+			float: none;
+			display: block;
+		}
+	} 
+
+	main{
+		margin-top: 250px;
+	}
+}
+
+#toast-container > .toast-success {
+    background-color: #ebcdac;
+    color: $dark-color;
+    background-image: url(./assets/img/check-dark-color.png);
+    background-position: 10px 25px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+    border: none;
+    box-sizing: border-box;
+    vertical-align: center;
+    box-shadow: 5px 5px 5px grey;
+}

@@ -1,0 +1,42 @@
+@import "../../../styles.scss";
+
+#product-list-header {
+	padding-left: 30px;
+	text-transform: capitalize;
+	font-family: $font-bold;
+	color: $dark-color;
+	padding-top: 30px;
+}
+
+.card {
+	min-height: 480px;
+	padding: 0px;
+}
+
+#card-container {
+	.card{
+		background-color: $card-color;
+		//background-color: white;
+		a {
+			text-decoration: none;
+			color: $dark-color;
+		}
+		
+		.card-title {
+			text-transform: capitalize;
+			font-family: $font-bold;
+		}
+
+		&:hover {
+			//background-color: white;
+			//background-color: $card-color;
+			//background-color: $secondary-color;
+			opacity: 0.75;
+			.card-image-top{
+				opacity: 0.95 !important;
+			}
+		}
+	} 
+}
+
+

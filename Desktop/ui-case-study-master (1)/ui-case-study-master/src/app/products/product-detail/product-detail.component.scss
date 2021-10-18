@@ -1,0 +1,35 @@
+@import "../../../styles.scss";
+
+.container {
+    padding-top: 30px;
+}
+
+h3 {
+    text-transform: capitalize;
+    font-family: $font-bold;
+    padding: 5px;
+}
+
+.cart-btn{
+
+    border-color: $dark-color;
+    background-color: white;
+    color: $dark-color;
+    border-width: 3px;
+    box-sizing: border-box;
+
+    &:hover{
+        background-color: $card-color;
+        //color: white;
+        color: $dark-color;
+        border-color: $card-color;
+    }
+
+}
+
+.card {
+    background-color: $card-color;
+    &:hover {
+        opacity: 0.85;
+    }
+}
