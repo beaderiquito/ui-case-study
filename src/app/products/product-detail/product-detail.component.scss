@@ -1,5 +1,9 @@
 @import "../../../styles.scss";
 
+.container {
+    padding-top: 30px;
+}
+
 h3 {
     text-transform: capitalize;
     font-family: $font-bold;
