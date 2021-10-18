@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ngrx/store": "^12.5.0",
     "bootstrap": "^4.5.0",
     "bootstrap-icons": "^1.6.0",
     "ngx-bootstrap": "^7.1.0",

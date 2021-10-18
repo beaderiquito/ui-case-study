@@ -15,6 +15,7 @@ import { RatingModule } from 'ngx-bootstrap/rating';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ReactiveFormsModule,
     RatingModule.forRoot(),
     ToastrModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
