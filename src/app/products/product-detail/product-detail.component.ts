@@ -30,6 +30,7 @@ export class ProductDetailComponent implements OnInit {
     this.average = this.productService.getAverageStars(this.product.reviews);
   }
   
+  //**Send selected product to cartService*/
   addProduct(){
     return this.cartService.addToCart(this.productId, this.product.name, this.product.price, this.product.photo);
   }//addProduct
