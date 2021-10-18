@@ -10,6 +10,7 @@ export class CartService {
 
   productQuantity = 1;
   myCart: any[] = [];
+  total = 0;
   
   addToCart(productID: any, productName: any, productPrice: number, productPhoto: string){
       
@@ -34,16 +35,18 @@ export class CartService {
           this.myCart.push([productID,productName,productPrice,this.productQuantity, productPhoto]);
           this.addedToCart(productName);
       }//if cart has no item
-    
+
+      this.total = this.computeTotal(this.myCart);
   }//add to cart
   
   removeProduct(productToDelete: any){
-      for(let i=0; i<this.myCart.length; i++){
-          if(i == productToDelete)
-        {
-          this.myCart.splice(i,1);
-        }
-     }//for
+    for(let i=0; i<this.myCart.length; i++){
+      if(i == productToDelete) {
+        this.myCart.splice(i,1);
+      }
+    }
+
+    this.total = this.computeTotal(this.myCart);
   }//removeProduct
 
   viewCart(): any[] {

@@ -20,7 +20,6 @@ export class CartComponent implements OnInit {
   }
   ngOnInit(): void {
     this.viewCart();
-    this.total = this.cartService.computeTotal(this.cart);
     this.toCurrency = this.productService.toCurrency;
   }
 
@@ -30,11 +29,14 @@ export class CartComponent implements OnInit {
 
   viewCart(): void {
     this.cart = this.cartService.viewCart();
+    this.total = this.cartService.total;
   }
 
   deleteProduct(index: any){
     this.modalRef?.hide();
-    return this.cartService.removeProduct(index);
+    this.cartService.removeProduct(index);
+    this.total = this.cartService.total;
+    this.viewCart();
   }
 }
 
