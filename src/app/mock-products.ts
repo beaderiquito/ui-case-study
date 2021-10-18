@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] =[
         photo: '../assets/img/products/apple-danish.jpg', 
         name: 'Apple Danish', 
         price: 125, 
-        description: 'Apple Danishes are the perfect way to welcome the cold season! The flaky crust, apple pie filling, crumb topping, and simple glaze make them irresistible. They make for a perfect snack but are also great for your cheat days.',
+        description: 'Apple danish is the perfect way to welcome the cold season! The flaky crust, apple pie filling, crumb topping, and simple glaze make them irresistible. They make for a perfect snack but are also great for your cheat days.',
         reviews: [{
         username: 'username1',
         date: 'April 20, 2021',
