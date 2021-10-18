@@ -55,6 +55,11 @@ h5 {
 
 }
 
+.delete-svg {
+  filter: brightness(0) saturate(100);
+  filter: invert(16%) sepia(73%) saturate(3156%) hue-rotate(14deg) brightness(96%) contrast(97%);
+}
+
 .cart-svg {
   filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
 }
