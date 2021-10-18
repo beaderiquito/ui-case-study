@@ -60,7 +60,7 @@
 
         </div>
         <div class="row">
-            <div class="col-12 text-right">
+            <div class="col-12 text-right" [class.visible] = "cart.length<1">
                 <h5>TOTAL: {{toCurrency.format(total)}}</h5>  
             </div>
         </div>
