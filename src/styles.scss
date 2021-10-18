@@ -9,6 +9,9 @@
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
+/* Importing Toast SCSS file. */
+@import '~ngx-toastr/toastr-bs4-alert';
+
 /*Importing fonts from local file. */
 @font-face {
     font-family: 'Regular';
