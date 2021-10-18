@@ -12,17 +12,14 @@
 					<p>{{product.description}}</p>
 					<button class="btn cart-btn" (click) = "addProduct()">ADD TO CART</button>	
 				</div>
-				<div class="col-sm-1">	
-						
-				</div>
 			</div>
-			<div class="row">
-				<div class="col-12 m-2">
+			<div class="row pt-5">
+				<div class="col-12 m-3">
 					<h3>Ratings and Reviews ({{product.reviews.length}})</h3>
 				</div>
 			</div>
 			<div *ngFor="let review of product.reviews">
-				<div class="row m-5 p-3 card">
+				<div class="row m-4 p-3 card">
 					<div class="col-12">
 						<div class="row">
 							<div class="col-12 col-sm-6">
