@@ -5,12 +5,15 @@
 				<div class="col-sm-6 text-center">
 					<img [src]="product.photo" style="width:70%">
 				</div>
-				<div class="col-sm-6">	
+				<div class="col-sm-5">	
 					<h3 class="text-center"><b>{{product.name}}</b></h3>
 					<h5><p>{{toCurrency.format(product.price)}}</p></h5>
 					<p><rating [(ngModel)]="average" [readonly]="true"></rating> ({{product.reviews.length}} Reviews)</p>
 					<p>{{product.description}}</p>
 					<button class="btn cart-btn" (click) = "addProduct()">ADD TO CART</button>	
+				</div>
+				<div class="col-sm-1">	
+						
 				</div>
 			</div>
 			<div class="row">
