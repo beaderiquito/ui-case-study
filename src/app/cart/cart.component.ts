@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,12 +9,21 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
- 
+  modalRef?: BsModalRef;
   cart: any[]=[];
-  constructor(private cartService:CartService) { }
-
+  toCurrency: any = 0;
+  constructor(private cartService:CartService, private modalService: BsModalService, private productService: ProductService) { }
+  
+  confirmationMessage(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
   ngOnInit(): void {
     this.viewCart();
+    this.toCurrency = this.productService.toCurrency;
+  }
+
+  decline(): void {
+    this.modalRef?.hide();
   }
 
   viewCart(): void {
@@ -20,6 +31,7 @@ export class CartComponent implements OnInit {
   }
 
   deleteProduct(index: any){
+    this.modalRef?.hide();
     return this.cartService.removeProduct(index);
   }
 

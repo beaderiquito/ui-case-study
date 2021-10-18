@@ -13,16 +13,26 @@
             <!--Added to Cart Quantity-->
             <div class = "col col-5 align-self-center mx-auto">
                 <h5>{{product[1]}}</h5>
-                <p>P {{product[2]}}</p>
+                <p>{{toCurrency.format(product[2])}}</p>
                 <label>Quantity: {{product[3]}} <a routerLink="../products/product-details/{{product[0]}}"><img id="edit-svg" src="../../assets/img/edit.svg" width="24"></a></label>
             </div>
 
             <!--Delete Button-->
             <div class = "col col-3 align-self-center mx-auto d-flex justify-content-center">
-                <button type="button" class="btn delete-btn" (click)="deleteProduct(index)">
+                <button type="button" class="btn delete-btn" (click)="confirmationMessage(deleteConfirmation)">
                     <img class="delete-svg" src="../../assets/img/trash-fill.svg" width="25"> DELETE
                 </button>
             </div>
+
+            <!--Delete Confirmation-->
+            <ng-template #deleteConfirmation>
+                <div class="modal-body text-center">
+                  <p>Do you want to confirm?</p>
+                  <button type="button" class="btn btn-lg start-shopping-btn" (click)="deleteProduct(index)" >Yes</button>
+                  <button type="button" class="btn btn-lg start-shopping-btn" (click)="decline()" >No</button>
+                </div>
+              </ng-template>
+
         </div>
         <div class="p-5 w-100 " [class.visible] = "cart.length>0">
             
@@ -45,7 +55,7 @@
     </div>
 
 
-    <!--Delete Confirmation-->
+    
     
 
 </main>
