@@ -51,7 +51,7 @@ export class CartService {
   }
 
   addedToCart(product: string) {
-    this.toastr.success('successfully added to cart!', '1' + product, {
+    this.toastr.success('successfully added to cart!', '1  ' + product, {
       timeOut: 1300
     });
   }

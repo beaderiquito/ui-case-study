@@ -82,3 +82,14 @@ main {
 		margin-top: 250px;
 	}
 }
+
+#toast-container > .toast-success {
+    background-color: $card-color;
+    color: $dark-color;
+    background-image: url(./assets/img/check-dark-color.png);
+    background-position: 10px 25px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+    border: none;
+    vertical-align: center;
+}
