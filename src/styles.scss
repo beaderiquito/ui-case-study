@@ -9,27 +9,60 @@
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
+/*Importing fonts from local file. */
+@font-face {
+    font-family: 'Regular';
+    src: url('assets/fonts/texgyreadventor-bold.otf');
+}
+
+@font-face {
+    font-family: 'Light';
+    src: url('assets/fonts/texgyreadventor-regular.otf');
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url('assets/fonts/Uni Sans Heavy.otf');
+}
+
+/* ----Variables---- */
+//$primary-color:  #c38452;
+//$secondary-color: #e3c099;
+//$highlight-color: #a1785c;
+//$dark-color: #6b3e2e;
+
+//$highlight-color:#795644;
+//$primary-color:#a1785c;
+
+
+$primary-color:  #df9c60;
+//$secondary-color: #ebc186;
+$highlight-color: #b9480b;
+$dark-color: #9a2e04;
+
+//$secondary-color:white;
+$card-color: #e3c099;
+$secondary-color: #f4dab5;
+
+$font-regular: 'Regular';
+$font-light: 'Light';
+$font-bold: 'Bold';
+
+
 body {
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: $font-regular;
+    letter-spacing: 2px;
+    background-color: $secondary-color;
+    text-decoration: none;
+    color: $dark-color;
 }
 
-main{
-	margin-top: 160px;
-	min-height: 300px;
-}
-
-nav {
-	background-color: whitesmoke;
-	position: sticky;
-}
-
-a {
-	text-decoration: none;
-	color: #00704A; //change color to match logo and search bar button
-	
-	&:hover{
-		color: #679267; //change color to match search bar button upon hover
-	}
+main {
+    font-family: $font-regular;
+    color: $dark-color;
+    padding-top: 120px;
+    //background-color: $secondary-color;
+    padding-bottom: 30px;
 }
 
 @media screen and (max-width: 500px) { //added for responsive design

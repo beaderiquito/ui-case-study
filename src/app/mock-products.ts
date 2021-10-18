@@ -95,7 +95,7 @@ export const PRODUCTS: Product[] =[
         photo: '../assets/img/products/cinnamon-roll.jpg',
         name: 'Cinnamon Roll',
         price: 120,
-        description: 'Product description',
+        description: 'Our cinnamon roll is filled with a generous cinnamon-sugar filling. Made with a rich dough leavened with yeast, topped with a soft cream cheese frosting.',
         reviews: [{
         username: 'username1', 
         date: 'April 20, 2021', 
