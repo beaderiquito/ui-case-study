@@ -1,6 +1,51 @@
-
+@import "../../styles.scss";
 
 .visible{
-    display: none;
-    visibility: hidden;
-  }
+  display: none;
+  visibility: hidden;
+}
+
+h3, h2 {
+  font-family: $font-bold;
+  padding: 10px 5px;
+}
+
+.cart-svg, .delete-svg {
+  filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
+}
+
+.start-shopping-btn {
+    border-color: $dark-color;
+    background-color: white;
+    color: $dark-color;
+    border-width: 3px;
+    box-sizing: border-box;
+
+    &:hover{
+        background-color: $primary-color;
+        color: white;
+        border-color: $primary-color;
+    }
+}
+
+.product-card {
+  background-color: $card-color;
+  color: $dark-color;
+}
+
+.delete-btn {
+    border-color: $dark-color;
+    background-color: $card-color;
+    color: $dark-color;
+    border-width: 3px;
+    box-sizing: border-box;
+    &:hover{
+        background-color: $dark-color;
+        color: white;
+        border-color: $dark-color;
+        .delete-svg{
+          filter: brightness(0) invert(1);
+        }
+    }
+
+}

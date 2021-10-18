@@ -2,9 +2,9 @@
     
     <div class = "container-fluid w-50 mb-5">
         <div class = "container w-100 mb-2">
-            <h3 > <img src="../../assets/img/cart3.svg" width="40"> My Cart {{cart.length}}</h3>
+            <h3> <img class="cart-svg" src="../../assets/img/cart3.svg" width="40"> MY CART ({{cart.length}})</h3>
         </div>
-        <div class= "row border p-2 mx-auto" *ngFor="let product of cart; let index = index">
+        <div class= "row border p-2 mx-auto product-card" *ngFor="let product of cart; let index = index">
             <!--Product Picture-->
             <div class = "col col-4 " > 
                 <img  class="img-fluid img-thumbnail" src="{{product[4]}}">
@@ -13,32 +13,32 @@
             <!--Added to Cart Quantity-->
             <div class = "col col-5 align-self-center mx-auto">
                 <h5>{{product[1]}}</h5>
-                <p>{{product[2]}}</p>
+                <p>P {{product[2]}}</p>
                 <label>Quantity: {{product[3]}}</label>
             </div>
 
             <!--Delete Button-->
             <div class = "col col-3 align-self-center mx-auto d-flex justify-content-center">
-                <button type="button" class="btn btn-primary btn-danger" (click)="deleteProduct(index)">
-                    <img src="../../assets/img/trash.svg" width="25"> Delete
+                <button type="button" class="btn delete-btn" (click)="deleteProduct(index)">
+                    <img class="delete-svg" src="../../assets/img/trash.svg" width="25"> DELETE
                 </button>
             </div>
         </div>
         <div class="p-5 w-100 " [class.visible] = "cart.length>0">
             
             <div  class="d-flex justify-content-center m-3" >
-                <img src="../../assets/img/cart3.svg" width="100">
+                <img class="cart-svg" src="../../assets/img/cart3.svg" width="100">
             </div>
 
             <div  class="d-flex justify-content-center" >
-                <h1>Your Cart is Empty</h1>  
+                <h2>YOUR CART IS EMPTY</h2>  
             </div>
             <div  class="d-flex justify-content-center" >
                 <h4>Have a coffee and make your day!</h4>    
             </div>
 
             <div  class="d-flex justify-content-center m-3" >
-            <button type="button" class="btn btn-lg btn-outline-success" routerLink=""> Start Shopping </button> 
+            <button type="button" class="btn btn-lg start-shopping-btn" routerLink=""> START SHOPPING </button> 
             </div>
 
         </div>

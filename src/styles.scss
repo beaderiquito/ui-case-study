@@ -42,6 +42,7 @@ $dark-color: #9a2e04;
 
 //$secondary-color:white;
 $card-color: #e3c099;
+//$card-color: #df9c60;
 $secondary-color: #f4dab5;
 
 $font-regular: 'Regular';
@@ -63,6 +64,7 @@ main {
     padding-top: 120px;
     //background-color: $secondary-color;
     padding-bottom: 30px;
+    min-height: 960px;
 }
 
 @media screen and (max-width: 500px) { //added for responsive design

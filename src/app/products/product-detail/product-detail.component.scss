@@ -15,9 +15,10 @@ h3 {
     box-sizing: border-box;
 
     &:hover{
-        background-color: $primary-color;
-        color: white;
-        border-color: $primary-color;
+        background-color: $card-color;
+        //color: white;
+        color: $dark-color;
+        border-color: $card-color;
     }
 
 }
