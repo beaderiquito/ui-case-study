@@ -27,7 +27,8 @@
     
     &:hover {
 
-        color: $secondary-color;
+        //color: $secondary-color;
+        color: white;
 
         .photo{
             filter: brightness(0) invert(1);

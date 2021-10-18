@@ -9,7 +9,7 @@ h3 {
 .cart-btn{
 
     border-color: $dark-color;
-    background-color: $secondary-color;
+    background-color: white;
     color: $dark-color;
     border-width: 3px;
     box-sizing: border-box;
@@ -20,4 +20,11 @@ h3 {
         border-color: $primary-color;
     }
 
+}
+
+.card {
+    background-color: $card-color;
+    &:hover {
+        opacity: 0.85;
+    }
 }

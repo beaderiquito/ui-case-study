@@ -1,8 +1,6 @@
 @import "../../styles.scss";
 
-.search-box {
-    color: $secondary-color !important;
-}
+
 
 input[type=text] {
 	padding: 5px 12px;
@@ -23,7 +21,7 @@ input[type=text] {
 
 .search-btn {
 	color: white;
-	background-color: $secondary-color;
+	background-color: $dark-color;
 	border: none;
 	border-radius: 20px;
 	width: 60px;
