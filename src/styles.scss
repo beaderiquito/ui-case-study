@@ -70,17 +70,32 @@ main {
     min-height: 960px;
 }
 
-@media screen and (max-width: 500px) { //added for responsive design
+@media screen and (max-width: 769px) { //added for responsive design
 	.navbar{
+        min-height: 250px;
+        justify-content: center;
+        text-align: center;
+        position: fixed;
+        .cart {
+            order: -2;
+        }
 		a {
 			float: none;
 			display: block;
+            padding: 20px 10px;
+            .logo {
+                padding: 0px 0px 10px !important;
+            }
 		}
 	} 
 
 	main{
-		margin-top: 250px;
+		padding-top: 250px;
 	}
+
+    .cart-page {
+        min-width: 80%;
+    }
 }
 
 #toast-container > .toast-success {
