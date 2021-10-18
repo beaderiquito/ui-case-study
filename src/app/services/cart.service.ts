@@ -52,7 +52,7 @@ export class CartService {
 
   addedToCart(product: string) {
     this.toastr.success('successfully added to cart!', '1' + product, {
-      timeOut: 1300,
+      timeOut: 3000,
       positionClass: 'toast-bottom-right'
     });
   }
