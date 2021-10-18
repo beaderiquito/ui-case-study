@@ -1,7 +1,7 @@
 <main>
 	<div class="container">
 		<div *ngIf="product">
-			<div class="row m-5">
+			<div class="row m-2">
 				<div class="col-sm-6 text-center">
 					<img [src]="product.photo" style="width:70%">
 				</div>
@@ -13,8 +13,8 @@
 					<button class="btn cart-btn" (click) = "addProduct()">ADD TO CART</button>	
 				</div>
 			</div>
-			<div class="row m-5">
-				<div class="col-12">
+			<div class="row">
+				<div class="col-12 m-2">
 					<h3>Ratings and Reviews ({{product.reviews.length}})</h3>
 				</div>
 			</div>
@@ -22,19 +22,23 @@
 				<div class="row m-5 p-3 card">
 					<div class="col-12">
 						<div class="row">
-							<div class="col-6">
-								<b>{{review.username}}</b>
+							<div class="col-12 col-sm-6">
+								<div class="row">
+									<div class="col-12">
+										<b>{{review.username}}</b>
+									</div>
+									<div class="col-12">
+										<rating [(ngModel)]="review.stars" [readonly]="true"></rating>
+									</div>
+								</div>
 							</div>
-							<div class="col-6 text-right grey">
+							<div class="col-12 col-sm-6 text-right">
 								{{review.date}}
 							</div>
 						</div>
 					</div>
 					<div class="col-12">
 						<br/>{{review.content}}
-					</div>
-					<div class="col-12">
-						<rating [(ngModel)]="review.stars" [readonly]="true"></rating>
 					</div>
 				</div>
 			</div>
