@@ -9,9 +9,9 @@ h3, h2 {
   font-family: $font-bold;
   padding: 10px 5px;
 }
-
-.cart-svg, .delete-svg {
-  filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
+h5 {
+  font-family: $font-bold;
+  text-transform: capitalize;
 }
 
 .start-shopping-btn {
@@ -40,6 +40,10 @@ h3, h2 {
     color: $dark-color;
     border-width: 3px;
     box-sizing: border-box;
+    #delete-svg{
+      filter: brigthness(0) saturate(100);
+      //filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
+    }
     &:hover{
         background-color: $dark-color;
         color: white;
@@ -49,4 +53,8 @@ h3, h2 {
         }
     }
 
+}
+
+.cart-svg {
+  filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
 }
