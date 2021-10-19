@@ -79,9 +79,22 @@
 
         <!--Checkout-->
         <div class="row checkout-row" [class.visible] = "cart.length<1">
-            <button type="button" class="btn btn-lg checkout-btn" routerLink="">CHECKOUT</button>
+            <button type="button" class="btn btn-lg checkout-btn" (click)="checkOut(template)">CHECKOUT</button>
         </div>
 
+        <!--Checkout Modal-->
+        <ng-template #template>
+        
+            <div class="modal-body">
+                <div class="content">
+                    <img class="cart-svg" src="../../assets/img/gift-fill.svg" width="100">
+                </div>
+                <h4 class="modal-title pull"> Thank you for your puchase!</h4>
+                <div class="row checkout-row">
+                    <button type="button" class="btn btn-lg template-btn ml-2 align-self-center mx-auto" routerLink="" (click)="hide()">Go Back to Main Page</button>
+                </div>
+            </div>
+          </ng-template>
     </div>
 
     

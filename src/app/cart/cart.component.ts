@@ -68,5 +68,13 @@ export class CartComponent implements OnInit {
         this.modalRef?.hide();
       }
 
+      checkOut(template: TemplateRef<any>) {
+        this.modalRef = this.modalService.show(template);
+      }
+
+      hide(): void {
+        this.modalRef?.hide();
+      }
+
   }//CartComponent
 
