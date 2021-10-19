@@ -61,7 +61,7 @@ export class CartService {
     });
   }
   
-  //** Total Price Computation */
+  /* Total Price Computation */
   computeTotal(cart: any): number {
     let price = 0;
     let quantity = 0;
