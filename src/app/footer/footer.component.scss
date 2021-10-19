@@ -4,66 +4,83 @@
     font-family: $font-regular;
     background-color: $primary-color;
     color: $dark-color;
-    h3{
-        font-family: $font-bold;
-        color: white;
-    }
-}
-
-.email > a {
-    text-decoration: none;
-    color: $dark-color;
-    font-style: italic;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-.list-inline-items {
-    a {
-        color: $dark-color; 
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
+    .footer-content {
+        text-align: center;
+        padding: 40px 5px 0px;
+        justify-content: space-between;
+        display: grid;
+        gap: 5px;
+        h3{
+            text-align: center;
+            font-family: $font-bold;
+            color: $bright-color;
+            padding: 10px 5px 10px;
         }
-    }
-}
-
-.btn-link {
-
-    filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
-    
-    &:hover {
-        filter: brightness(0) invert(1);
-        //filter: invert(93%) sepia(89%) saturate(591%) hue-rotate(305deg) brightness(101%) contrast(78%);
-    }
-}
-
-
-.footer-links {
-    a {
-        color: $dark-color;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
+        .email {
+            a {
+                text-decoration: none;
+                color: $dark-color;
+                font-style: italic;
+            
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     } 
-}
-
-.copyright {
-    font-family: $font-light;
-    color: white;
-    background-color: $dark-color;    
-    a {
-        text-decoration: none;
-        color: white;
-        &:hover {
-            text-decoration: underline;
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        ul {
+            li {
+                display: inline;
+                padding: 0px 5px;
+                a {
+                    color: $dark-color;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                } 
+            }
+        } 
+    }
+    .social-media {
+        margin-bottom: 15px;
+        .btn-link {
+            @extend %filter-dark-color;
+            margin: 15px;
+            .icon {
+                width: 25px;
+            }
+            &:hover {
+                @extend %filter-bright-color;
+            }
         }
     }
-    
+    .copyright {
+        font-family: $font-light;
+        color: $bright-color;
+        background-color: $dark-color; 
+        text-align: center;
+        padding: 10px;   
+        a {
+            text-decoration: none;
+            color: $bright-color;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+    }
 }
+
+
+
+
+
+
+
+
 

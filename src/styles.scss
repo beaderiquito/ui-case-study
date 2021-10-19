@@ -3,12 +3,6 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-/* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
-
-/* Importing Datepicker SCSS file. */
-@import "~ngx-bootstrap/datepicker/bs-datepicker";
-
 /* Importing Toast SCSS file. */
 @import '~ngx-toastr/toastr-bs4-alert';
 
@@ -28,49 +22,54 @@
     src: url('assets/fonts/Uni Sans Heavy.otf');
 }
 
-/* ----Variables---- */
-//$primary-color:  #c38452;
-//$secondary-color: #e3c099;
-//$highlight-color: #a1785c;
-//$dark-color: #6b3e2e;
+/* ------------Variables------------ */
 
-//$highlight-color:#795644;
-//$primary-color:#a1785c;
-
-
+/*----Colors----*/
 $primary-color:  #df9c60;
-//$secondary-color: #ebc186;
-$highlight-color: #b9480b;
-$dark-color: #9a2e04;
-
-//$secondary-color:white;
-$card-color: #e3c099;
-//$card-color: #df9c60;
 $secondary-color: #f4dab5;
-
+$highlight-color: #b9480b;
+$bright-color: white;
+$dark-color: #9a2e04;
+$card-color: #e3c099;
+$toast-color: #ebcdac;
+/*----Fonts----*/
 $font-regular: 'Regular';
 $font-light: 'Light';
 $font-bold: 'Bold';
+/*----Paddings and Margins----*/
+
+/*----Shared Styles----*/
+%filter-dark-color{
+    filter: brightness(0) saturate(100%);
+    filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
+}
+
+%filter-bright-color {
+    filter: brightness(0) invert(1);
+}
 
 
+/*-------------------- MAIN --------------------*/
 body {
     font-family: $font-regular;
     letter-spacing: 2px;
     background-color: $secondary-color;
     text-decoration: none;
     color: $dark-color;
+    main {
+        font-family: $font-regular;
+        color: $dark-color;
+        padding-top: 120px;
+        background-color: $bright-color;
+        padding-bottom: 30px;
+        min-height: 960px;
+    }
 }
 
-main {
-    font-family: $font-regular;
-    color: $dark-color;
-    padding-top: 120px;
-    background-color: white;
-    padding-bottom: 30px;
-    min-height: 960px;
-}
 
-@media screen and (max-width: 769px) { //added for responsive design
+
+/* ---- Responsive Design ----*/
+@media screen and (max-width: 769px) {
 	.navbar{
         min-height: 250px;
         justify-content: center;
@@ -99,7 +98,7 @@ main {
 }
 
 #toast-container > .toast-success {
-    background-color: #ebcdac;
+    background-color: $toast-color;
     color: $dark-color;
     background-image: url(./assets/img/check-dark-color.png);
     background-position: 10px 18px;
@@ -111,3 +110,4 @@ main {
     box-shadow: 5px 5px 5px grey;
     line-height: 1.05;
 }
+

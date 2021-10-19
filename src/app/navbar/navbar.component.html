@@ -1,21 +1,21 @@
-<nav class="navbar navbar-expand-md fixed-top">
+<!--uses bootstrap for some properties and grid system-->
+<nav class="navbar navbar-expand-md fixed-top"> 
   <div class="row container-fluid"> 
-    <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
+    <ul class="navbar-nav">
       <li class="nav-item col-md-3">
         <a routerLink="/products">
           <img
-            class="navbar-brand"
+            class="logo"
             src="../../assets/img/logo1.png"
             alt="logo"
-            height="90"
           />
         </a>
       </li>
       <li class="nav-item col-md-6">
         <app-search-box></app-search-box>
       </li>
-      <li class="cart nav-item col-md-3 text-end pr-5 flex">
-        <a class="nav-link" id="my-cart" routerLink="/cart"><img class="photo" src="../../assets/img/cart.svg" alt="cart" height="20">  MY CART ({{cart.length}})</a>
+      <li class="cart nav-item col-md-3">
+        <a class="nav-link" id="my-cart" routerLink="/cart"><img class="photo" src="../../assets/img/cart.svg" alt="cart">  MY CART ({{cart.length}})</a>
       </li>
     </ul>
   </div>
