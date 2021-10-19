@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-
-import { CartItem } from './cart-item.model';
+import { Product } from './Product';
 import { AppState } from './store/app-state';
 
 @Component({
@@ -11,7 +10,7 @@ import { AppState } from './store/app-state';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  cartItems!: Observable<CartItem[]>;
+  cartItems!: Observable<Product[]>;
 
   constructor(private store: Store<AppState>) { }
 
