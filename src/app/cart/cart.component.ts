@@ -4,13 +4,6 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ProductService } from '../services/product.service';
 import { Observable } from 'rxjs';
 
-/* NgRx */
-import { createAction, Store } from '@ngrx/store';
-import { Product } from '../Product';
-import { AppState } from '../store/app-state';
-import { AddItemAction, DeleteItemAction } from '../store/cart.actions';
-
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -22,59 +15,48 @@ export class CartComponent implements OnInit {
   toCurrency: any = 0;
   total = 0;
 
-  /* NgRx */
-  cartItems!: Observable<Product[]>
+  constructor(
+  private cartService:CartService, 
+  private modalService: BsModalService, 
+  private productService: ProductService,
 
-      constructor(
-        private cartService:CartService, 
-        private modalService: BsModalService, 
-        private productService: ProductService,
+) { }
 
-        /* NgRx */
-        private store: Store<AppState>,
-      ) { }
+  ngOnInit(): void {
+    this.viewCart();
+    this.toCurrency = this.productService.toCurrency;
+  }
 
-      ngOnInit(): void {
-        this.viewCart();
-        this.toCurrency = this.productService.toCurrency;
+  /*Pop up modal*/
+  confirmationMessage(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+  
+  /*Get updated items of cart*/
+  viewCart(): void {
+    this.cart = this.cartService.viewCart();
+    this.total = this.cartService.total;
+  }
 
-        /* NgRx */
-        this.cartItems = this.store.select(store => store.cart); //cart from store class
-      }
+  /*User confirms to delete a product*/
+  deleteProduct(index: any){
+    this.modalRef?.hide();
+    this.cartService.removeProduct(index);
+    this.viewCart();
+  }
 
-      /*Pop up modal*/
-      confirmationMessage(template: TemplateRef<any>) {
-        this.modalRef = this.modalService.show(template);
-      }
-      
-      /*Get updated items of cart*/
-      viewCart(): void {
-        this.cart = this.cartService.viewCart();
-        this.total = this.cartService.total;
-      }
+  /*User declines to delete a product*/
+  decline(): void {
+    this.modalRef?.hide();
+  }
 
-      /*User confirms to delete a product*/
-      deleteProduct(index: any){
-        this.modalRef?.hide();
-        this.cartService.removeProduct(index);
-        this.viewCart();
+  checkOut(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 
-        /* NgRx */
-        this.store.dispatch(new DeleteItemAction(this.productService.getProductById(index)));
-      }
+  hide(): void {
+    this.modalRef?.hide();
+  }
 
-      /*User declines to delete a product*/
-      decline(): void {
-        this.modalRef?.hide();
-      }
-
-      checkOut(template: TemplateRef<any>) {
-        this.modalRef = this.modalService.show(template);
-      }
-
-      hide(): void {
-        this.modalRef?.hide();
-      }
-
-  }//CartComponent
+}//CartComponent
 
