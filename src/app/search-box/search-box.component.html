@@ -1,5 +1,5 @@
 <form class="form-inline">
-    <div class="input-group flex-grow-1">
+    <div class="input-group flex-grow-1 search-container">
         <input id="searchInput" class="form-control" type="text" placeholder="Search for products..." [formControl]="searchInput" >
         <button class="btn search-btn" [disabled]="!searchInput.valid"  type="submit" (click)="submit()">GO</button>
     </div>
