@@ -57,7 +57,6 @@ export class CartComponent implements OnInit {
       deleteProduct(index: any){
         this.modalRef?.hide();
         this.cartService.removeProduct(index);
-        this.total = this.cartService.total;
         this.viewCart();
 
         /* NgRx */
