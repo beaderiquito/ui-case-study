@@ -90,7 +90,26 @@ body {
 	main{
 		padding-top: 250px;
 	}
-
+    .cart-page {
+        .product-img > img {
+            margin: auto;
+        }
+        .title {
+            font-size: medium;
+        }
+        .product-info {
+            padding-top: 20px;
+            .product-name {
+                text-align: center;
+            }
+        }
+        .delete-btn {
+            margin: auto !important;
+        }
+        .content {
+            text-align: center;
+        }
+    }
 }
 
 @media screen and (max-width: 1400px) {

@@ -79,6 +79,25 @@
     padding: 30px 20px;
     text-align: right;
   }
+  .checkout-row {
+    padding: 40px;
+    justify-content: center;
+    .checkout-btn {
+      padding-left: 30px;
+      padding-right: 30px;
+      background-color: $dark-color;
+      border-color: $dark-color;
+      color: $bright-color;
+      border-width: 3px;
+      box-sizing: border-box;
+      font-family: $font-regular;
+      &:hover{
+        background-color: $primary-color;
+        color: $bright-color;
+        border-color: $primary-color;
+      }
+    }
+  }
 }
 
 .modal-body {
@@ -95,9 +114,9 @@
   box-sizing: border-box;
   font-family: $font-regular;
   &:hover{
-      background-color: $primary-color;
-      color: $bright-color;
-      border-color: $primary-color;
+    background-color: $primary-color;
+    color: $bright-color;
+    border-color: $primary-color;
   }
 }
 

@@ -4,26 +4,26 @@
         
         <!--Display number of items in cart-->
         <div class = "container">
-            <h3> <img class="cart-svg" src="../../assets/img/cart3.svg" width="40"> MY CART ({{cart.length}})</h3>
+            <h3 class="title"> <img class="cart-svg" src="../../assets/img/cart3.svg" width="40"> MY CART ({{cart.length}})</h3>
         </div>
 
         <!--Show all items of cart-->
         <div class= "row product-card" *ngFor="let product of cart; let index = index">
             
             <!--Product Picture-->
-            <div class = "col col-4 product-img" > 
+            <div class = "col col-md-4 product-img" > 
                 <img src="{{product[4]}}">
             </div>
 
             <!--Added to Cart Quantity-->
-            <div class = "col col-4 product-info">
-                <h5>{{product[1]}}</h5>
+            <div class = "col col-md-4 product-info">
+                <h5 class="product-name">{{product[1]}}</h5>
                 <p>{{toCurrency.format(product[2])}}</p>
                 <label>Quantity: {{product[3]}} <a routerLink="../products/product-details/{{product[0]}}"><img class="edit-svg" src="../../assets/img/edit.svg" width="24"></a></label>
             </div>
 
             <!--Delete Button and Subtotal-->
-            <div class = "col col-4">
+            <div class = "col col-md-4 end-column">
                 <div class="row delete-row">
                     <button type="button" class="btn delete-btn" (click)="confirmationMessage(deleteConfirmation)">
                         <img class="delete-svg" src="../../assets/img/trash-fill.svg" width="25"> DELETE
@@ -76,6 +76,12 @@
             </div>
 
         </div>
+
+        <!--Checkout-->
+        <div class="row checkout-row" [class.visible] = "cart.length<1">
+            <button type="button" class="btn btn-lg checkout-btn" routerLink="">CHECKOUT</button>
+        </div>
+
     </div>
 
     
