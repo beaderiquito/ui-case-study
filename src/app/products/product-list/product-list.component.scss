@@ -6,37 +6,37 @@
 	font-family: $font-bold;
 	color: $dark-color;
 	padding-top: 30px;
-}
-
-.card {
-	min-height: 480px;
-	padding: 0px;
+	h1 {
+		align-content: center;
+	}
 }
 
 #card-container {
 	.card{
 		background-color: $card-color;
-		//background-color: white;
+		min-height: 480px;
+		padding: 0px;
 		a {
 			text-decoration: none;
 			color: $dark-color;
-		}
-		
-		.card-title {
-			text-transform: capitalize;
-			font-family: $font-bold;
-		}
-
-		&:hover {
-			//background-color: white;
-			//background-color: $card-color;
-			//background-color: $secondary-color;
-			opacity: 0.75;
-			.card-image-top{
-				opacity: 0.95 !important;
+			.card-image-top {
+				width: 300px;
+				height: 300px;
 			}
-		}
+			.card-title {
+				text-transform: capitalize;
+				font-family: $font-bold;
+			}
+			&:hover {
+				opacity: 0.75;
+				.card-image-top{
+					opacity: 0.95 !important;
+				}
+			}
+		}		
 	} 
 }
+
+
 
 
