@@ -12,7 +12,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
   searchTerm: string = this.searchService.searchTerm;
-  selectedProduct?: Product;
   products: Product[] = [];
   toCurrency: any;
   header: string = '';
@@ -29,7 +28,9 @@ export class ProductListComponent implements OnInit {
     this.toCurrency = this.productService.toCurrency;
     this.route.params.subscribe(params => {
       if(params.searchTerm){
-        this.products = this.productService.getAllProducts().filter(product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()));
+        this.products = this.productService.getAllProducts().filter(
+          product => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()) 
+          || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()));
         this.header = `${this.products.length} matches for "${params.searchTerm.toLowerCase()}"`;
       }
       else{
@@ -37,10 +38,6 @@ export class ProductListComponent implements OnInit {
         this.header = 'All Products';
       }
      })
-  }
-
-  onSelect(product: Product): void{
-    this.selectedProduct = product;
   }
 
   getAllProducts(): void { 
