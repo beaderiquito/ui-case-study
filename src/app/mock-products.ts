@@ -12,17 +12,17 @@ export const PRODUCTS: Product[] =[
         username: 'username1', 
         date: 'April 20, 2021', 
         content: 'This is review # 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 5},
+        stars: 4},
         {
         username: 'username2', 
         date: 'April 20, 2021', 
         content: 'This is review # 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 3},
+        stars: 2},
         {
         username: 'username3', 
         date: 'April 20, 2021', 
         content: 'This is review # 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 1}]
+        stars: 4}]
     },
     {
         id: 2,
@@ -44,24 +44,24 @@ export const PRODUCTS: Product[] =[
         username: 'username3', 
         date: 'April 20, 2021', 
         content: 'This is review # 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 4}]
+        stars: 3}]
     },
     {
         id: 3, 
         photo: '../assets/img/products/french-toast.jpg', 
         name: 'French Toast', 
         price: 150,
-        description: 'Our french toast is a slice of brioche bread dipped in milk and eggs, then pan fried in butter goodness. Each serving gives you two slices of bread topped with butter, syrup, powdered sugar, and some of your favorite berries.',
+        description: 'Our french toast is made of thick slices of brioche bread dipped in milk and eggs, then pan fried in butter goodness. Each serving gives you two slices of bread topped with butter, syrup, powdered sugar, and some of your favorite berries.',
         reviews: [{
         username: 'username1',
         date: 'April 20, 2021',
         content: 'This is review # 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.',
-        stars: 5},
+        stars: 2},
         {
         username: 'username2', 
         date: 'April 20, 2021', 
         content: 'This is review # 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 3},
+        stars: 1},
         {
         username: 'username3',
         date: 'April 20, 2021', 
@@ -83,12 +83,12 @@ export const PRODUCTS: Product[] =[
         username: 'username2', 
         date: 'April 20, 2021', 
         content: 'This is review # 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 3},
+        stars: 5},
         {
         username: 'username3', 
         date: 'April 20, 2021', 
         content: 'This is review # 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 1}]
+        stars: 4}]
     },
     {
         id: 5,
@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] =[
         username: 'username1', 
         date: 'April 20, 2021', 
         content: 'This is review # 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 5},
+        stars: 3},
         {
         username: 'username2', 
         date: 'April 20, 2021', 
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] =[
         username: 'username3', 
         date: 'April 20, 2021', 
         content: 'This is review # 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
-        stars: 1}]
+        stars: 2}]
     },
     {
         id: 6, 
@@ -133,5 +133,49 @@ export const PRODUCTS: Product[] =[
         date: 'April 20, 2021', 
         content: 'This is review # 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
         stars: 1}]
+    },
+    {
+        id: 7, 
+        photo: '../assets/img/products/pain-au-chocolat.png', 
+        name: 'Pain Au Chocolat', 
+        price: 130, 
+        description: 'Classic BreadStop pain au chocolat made with our flaky croissant dough rolled with 3 batons of luscious dark chocolate, baked to golden brown perfection.',
+        reviews: [{
+        username: 'username1', 
+        date: 'April 20, 2021', 
+        content: 'This is review # 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
+        stars: 3},
+        {
+        username: 'username2', 
+        date: 'April 20, 2021', 
+        content: 'This is review # 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
+        stars: 4},
+        {
+        username: 'username3', 
+        date: 'April 20, 2021', 
+        content: 'This is review # 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
+        stars: 1}]
+    },
+    {
+        id: 8, 
+        photo: '../assets/img/products/chocolate-glazed-doughnut.jpg', 
+        name: 'Chocolate Glazed Doughnut', 
+        price: 90, 
+        description: 'A signature doughnut glazed with silky and smooth chocolate—made with old-fashioned scrumptiousness.',
+        reviews: [{
+        username: 'username1', 
+        date: 'April 20, 2021', 
+        content: 'This is review # 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
+        stars: 5},
+        {
+        username: 'username2', 
+        date: 'April 20, 2021', 
+        content: 'This is review # 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
+        stars: 4},
+        {
+        username: 'username3', 
+        date: 'April 20, 2021', 
+        content: 'This is review # 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, ante ac sagittis viverra, ante nunc commodo nibh, ut pulvinar felis velit in leo. Nam lorem lorem, rutrum in quam in, mattis vulputate sem.', 
+        stars: 2}]
     }
 ];
