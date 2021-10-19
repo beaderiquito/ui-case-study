@@ -38,6 +38,27 @@
     }
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+.photo {
+    filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
+    vertical-align: top;
+}
+
+.cart > a {
+    font-family: $font-bold;
+    text-decoration: none;
+    color: $dark-color;
+    
+    &:hover {
+        color: white;
+
+        .photo{
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+>>>>>>> df70a25484c103e8143d1ccce0913a9cb9f427f1
