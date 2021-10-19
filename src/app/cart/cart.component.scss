@@ -28,6 +28,14 @@
     border-width: 3px;
     border-radius: 4px;
     box-sizing: border-box;
+    .product-img {
+      margin: auto;
+      img {
+        width: 200px;
+        border-radius: 2px;
+        box-shadow: 3px 3px 3px rgba(0,0,0, 0.3);
+      }
+    }
     .edit-svg:hover {
       @extend %filter-bright-color;
     }
