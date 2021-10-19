@@ -29,7 +29,6 @@ export class SearchBoxComponent implements OnInit{
     this.searchTerm = this.searchInput.value;
     this.searchInput.reset();
     this.searchService.updateSearchTerm(this.searchTerm);
-    console.log(this.searchService.searchTerm);
     this.router.navigateByUrl('/products/' + this.searchTerm);
   }
 }
