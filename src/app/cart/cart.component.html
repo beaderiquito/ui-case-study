@@ -37,7 +37,7 @@
             <!--Delete Confirmation-->
             <ng-template #deleteConfirmation>
                 <div class="modal-body">
-                  <p>Do you want to confirm?</p>
+                  <p>Do you want to delete this item?</p>
                   <button type="button" class="btn btn-lg template-btn" (click)="deleteProduct(index)" >YES</button>
                   <button type="button" class="btn btn-lg template-btn ml-2" (click)="decline()" >NO</button>
                 </div>
@@ -87,11 +87,11 @@
         
             <div class="modal-body">
                 <div class="content">
-                    <img class="cart-svg" src="../../assets/img/gift-fill.svg" width="100">
+                    <img class="checkout-svg" src="../../assets/img/gift-fill.svg" width="100">
                 </div>
                 <h4 class="modal-title pull"> Thank you for your puchase!</h4>
                 <div class="row checkout-row">
-                    <button type="button" class="btn btn-lg template-btn ml-2 align-self-center mx-auto" routerLink="" (click)="hide()">Go Back to Main Page</button>
+                    <button type="button" class="btn btn-lg homepage-btn" routerLink="" (click)="hide()">GO BACK TO MAIN PAGE</button>
                 </div>
             </div>
           </ng-template>
