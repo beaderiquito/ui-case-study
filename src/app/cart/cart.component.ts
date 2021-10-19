@@ -5,8 +5,8 @@ import { ProductService } from '../services/product.service';
 import { Observable } from 'rxjs';
 
 /* NgRx */
-import { Store } from '@ngrx/store';
-import { CartItem } from '../cart-item.model';
+import { createAction, Store } from '@ngrx/store';
+import { Product } from '../Product';
 import { AppState } from '../store/app-state';
 import { AddItemAction, DeleteItemAction } from '../store/cart.actions';
 
@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
   total = 0;
 
   /* NgRx */
-  cartItems!: Observable<CartItem[]>
+  cartItems!: Observable<Product[]>
 
       constructor(
         private cartService:CartService, 
@@ -40,7 +40,6 @@ export class CartComponent implements OnInit {
 
         /* NgRx */
         this.cartItems = this.store.select(store => store.cart); //cart from store class
-
       }
 
       /*Pop up modal*/
@@ -60,6 +59,9 @@ export class CartComponent implements OnInit {
         this.cartService.removeProduct(index);
         this.total = this.cartService.total;
         this.viewCart();
+
+        /* NgRx */
+        this.store.dispatch(new DeleteItemAction(this.productService.getProductById(index)));
       }
 
       /*User declines to delete a product*/

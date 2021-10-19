@@ -1,5 +1,5 @@
-import { CartItem } from "../cart-item.model";
+import { Product } from "../Product";
 
 export interface AppState {
-    readonly cart: CartItem[];
+    readonly cart: Product[];
 }
