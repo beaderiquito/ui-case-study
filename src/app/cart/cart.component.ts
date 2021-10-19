@@ -59,6 +59,9 @@ export class CartComponent implements OnInit {
         this.cartService.removeProduct(index);
         this.total = this.cartService.total;
         this.viewCart();
+
+        /* NgRx */
+        this.store.dispatch(new DeleteItemAction(this.productService.getProductById(index)));
       }
 
       /*User declines to delete a product*/
