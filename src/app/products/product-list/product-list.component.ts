@@ -24,8 +24,10 @@ export class ProductListComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    console.log('INIT'); 
+    //adds currency symbol to prices
     this.toCurrency = this.productService.toCurrency;
+
+    //checks route parameter after 'products/' and looks for products that match the searchTerm
     this.route.params.subscribe(params => {
       if(params.searchTerm){
         this.products = this.productService.getAllProducts().filter(
@@ -33,6 +35,8 @@ export class ProductListComponent implements OnInit {
           || product.description.toLowerCase().includes(params.searchTerm.toLowerCase()));
         this.header = `${this.products.length} matches for "${params.searchTerm.toLowerCase()}"`;
       }
+
+      //if there is no parameter after 'products/' get all products
       else{
         this.getAllProducts();
         this.header = 'All Products';
@@ -40,10 +44,12 @@ export class ProductListComponent implements OnInit {
      })
   }
 
+  //gets all products
   getAllProducts(): void { 
     this.products = this.productService.getAllProducts();
   }
 
+  //computes for the average stars
   getAverageStars(reviews: any): number {
     return this.productService.getAverageStars(reviews);
   }
