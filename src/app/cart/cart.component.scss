@@ -1,70 +1,116 @@
 @import "../../styles.scss";
 
-.visible{
-  display: none;
-  visibility: hidden;
-}
-
-h3, h2 {
-  font-family: $font-bold;
-  padding: 10px 5px;
-}
-h5 {
-  font-family: $font-bold;
-  text-transform: capitalize;
-}
-
-.start-shopping-btn {
-    border-color: $dark-color;
-    background-color: white;
-    color: $dark-color;
-    border-width: 3px;
-    box-sizing: border-box;
-    font-family: $font-regular;
-
-    &:hover{
-        background-color: $primary-color;
-        color: white;
-        border-color: $primary-color;
-    }
-}
-
-.product-card {
-  margin: 10px 10px;
-  background-color: $card-color;
-  color: $dark-color;
-  border-color: $card-color;
-  border-width: 3px;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.delete-btn {
-    border-color: $dark-color;
+.cart-page {
+  width: 50%;
+  margin-bottom: 20px;
+  .visible{
+    display: none;
+    visibility: hidden;
+  }
+  .delete-svg, .cart-svg, .edit-svg {
+    @extend %filter-dark-color;
+  }
+  h3, h2 {
+    font-family: $font-bold;
+    padding: 10px 5px;
+    margin: 10px;
+  }
+  h5 {
+    font-family: $font-bold;
+    text-transform: capitalize;
+  }
+  .product-card {
+    padding: 10px;
+    margin: 10px 10px;
     background-color: $card-color;
     color: $dark-color;
+    border-color: $card-color;
     border-width: 3px;
+    border-radius: 4px;
     box-sizing: border-box;
-    &:hover{
-        background-color: $dark-color;
-        color: white;
-        border-color: $dark-color;
-        .delete-svg{
-          filter: brightness(0) invert(1);
-        }
+    .edit-svg:hover {
+      @extend %filter-bright-color;
     }
-
+    .product-info {
+      align-self: center;
+      margin: auto;
+    }
+    .delete-row {
+      justify-content: flex-end;
+      padding: 80px 40px;
+      .delete-btn {
+        border-color: $dark-color;
+        background-color: $card-color;
+        color: $dark-color;
+        border-width: 3px;
+        box-sizing: border-box;
+        width: 80%;
+        &:hover {
+          background-color: $dark-color;
+          color: $bright-color;
+          border-color: $dark-color;
+          .delete-svg{
+            @extend %filter-bright-color;
+          }
+        }
+      }
+    }
+    .subtotal-row {
+      float: bottom;
+      margin: 0 !important;
+      padding-right: 20px !important;
+      padding-bottom: 0 !important;
+      padding-top: 20px;
+      .subtotal {
+        text-align: right;
+        padding: 0;
+      }
+    }
+  }
+  .total {
+    padding: 30px 20px;
+    text-align: right;
+  }
 }
 
-.delete-svg {
-  filter: brightness(0) saturate(100);
-  filter: invert(16%) sepia(73%) saturate(3156%) hue-rotate(14deg) brightness(96%) contrast(97%);
+.modal-body {
+  color: $dark-color;
+  font-family: $font-regular;
+  text-align: center;
 }
 
-.cart-svg, #edit-svg {
-  filter: invert(22%) sepia(23%) saturate(6574%) hue-rotate(1deg) brightness(91%) contrast(98%);
+.template-btn {
+  border-color: $dark-color;
+  background-color: $bright-color;
+  color: $dark-color;
+  border-width: 3px;
+  box-sizing: border-box;
+  font-family: $font-regular;
+  &:hover{
+      background-color: $primary-color;
+      color: $bright-color;
+      border-color: $primary-color;
+  }
 }
 
-#edit-svg:hover {
-  filter: brightness(0) invert(1);
+.empty-cart {
+  padding: 20px;
+  width: 100%;
+  .content {
+    display: flex;
+    justify-content: center;
+    img, button {
+      margin: 15px;
+    }
+  } 
 }
+
+
+
+
+
+
+
+
+
+

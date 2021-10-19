@@ -1,14 +1,14 @@
 <main>
     
-    <div class = "cart-page container-md w-50 mb-5">
+    <div class = "cart-page container-md">
         
         <!--Display number of items in cart-->
-        <div class = "container w-100 mb-2">
+        <div class = "container">
             <h3> <img class="cart-svg" src="../../assets/img/cart3.svg" width="40"> MY CART ({{cart.length}})</h3>
         </div>
 
         <!--Show all items of cart-->
-        <div class= "row border p-2 mx-auto product-card" *ngFor="let product of cart; let index = index">
+        <div class= "row product-card" *ngFor="let product of cart; let index = index">
             
             <!--Product Picture-->
             <div class = "col col-4 " > 
@@ -16,54 +16,54 @@
             </div>
 
             <!--Added to Cart Quantity-->
-            <div class = "col col-5 align-self-center mx-auto">
+            <div class = "col col-4 product-info">
                 <h5>{{product[1]}}</h5>
                 <p>{{toCurrency.format(product[2])}}</p>
-                <label>Quantity: {{product[3]}} <a routerLink="../products/product-details/{{product[0]}}"><img id="edit-svg" src="../../assets/img/edit.svg" width="24"></a></label>
+                <label>Quantity: {{product[3]}} <a routerLink="../products/product-details/{{product[0]}}"><img class="edit-svg" src="../../assets/img/edit.svg" width="24"></a></label>
             </div>
 
-            <!--Delete Button-->
-            <div class = "col col-3 align-self-center mx-auto d-flex justify-content-center">
-                <div class="row">
-                    <div class="col-12">
-                        <button type="button" class="btn delete-btn" (click)="confirmationMessage(deleteConfirmation)">
-                            <img class="delete-svg" src="../../assets/img/trash-fill.svg" width="25"> DELETE
-                        </button>
-                    </div>
-                    <div class="col-12 mt-5 text-right">
-                        Subtotal: {{toCurrency.format(product[2] * product[3])}}
-                    </div>
+            <!--Delete Button and Subtotal-->
+            <div class = "col col-4">
+                <div class="row delete-row">
+                    <button type="button" class="btn delete-btn" (click)="confirmationMessage(deleteConfirmation)">
+                        <img class="delete-svg" src="../../assets/img/trash-fill.svg" width="25"> DELETE
+                    </button>
+                </div>
+                <div class="row subtotal-row">
+                    <p class="subtotal">Subtotal: {{toCurrency.format(product[2] * product[3])}}</p>
                 </div>
             </div>
 
             <!--Delete Confirmation-->
             <ng-template #deleteConfirmation>
-                <div class="modal-body text-center">
+                <div class="modal-body">
                   <p>Do you want to confirm?</p>
-                  <button type="button" class="btn btn-lg start-shopping-btn" (click)="deleteProduct(index)" >YES</button>
-                  <button type="button" class="btn btn-lg start-shopping-btn ml-2" (click)="decline()" >NO</button>
+                  <button type="button" class="btn btn-lg template-btn" (click)="deleteProduct(index)" >YES</button>
+                  <button type="button" class="btn btn-lg template-btn ml-2" (click)="decline()" >NO</button>
                 </div>
-              </ng-template>
-
+            </ng-template>
+            
         </div>
+
+        
         
         <!--Show messsage that cart is empty-->
-        <div class="p-5 w-100 " [class.visible] = "cart.length>0">
+        <div class="empty-cart" [class.visible] = "cart.length>0">
             
-            <div  class="d-flex justify-content-center m-3" >
+            <div class="content">
                 <img class="cart-svg" src="../../assets/img/cart3.svg" width="100">
             </div>
 
-            <div  class="d-flex justify-content-center">
+            <div class="content">
                 <h2>YOUR CART IS EMPTY</h2>  
             </div>
 
-            <div  class="d-flex justify-content-center" >
+            <div class="content">
                 <h4>We bake it right!</h4>    
             </div>
 
-            <div  class="d-flex justify-content-center m-3" >
-            <button type="button" class="btn btn-lg start-shopping-btn" routerLink=""> START SHOPPING </button> 
+            <div class="content">
+            <button type="button" class="btn btn-lg template-btn" routerLink=""> START SHOPPING </button> 
             </div>
 
         </div>
@@ -71,8 +71,8 @@
         <!--Cart Total-->
         <div class="row">
 
-            <div class="col-12 text-right" [class.visible] = "cart.length<1">
-                <h5>TOTAL: {{toCurrency.format(total)}}</h5>  
+            <div class="col-12" [class.visible] = "cart.length<1">
+                <h5 class="total">TOTAL: {{toCurrency.format(total)}}</h5>  
             </div>
 
         </div>
