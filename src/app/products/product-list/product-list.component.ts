@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../../Product';
 import { ProductService } from 'src/app/services/product.service';
-import { SearchService } from 'src/app/services/search.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  searchTerm: string = this.searchService.searchTerm;
   products: Product[] = [];
   toCurrency: any;
   header: string = '';
@@ -19,8 +17,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     public productService: ProductService,
     public router: Router,
-    public route: ActivatedRoute,
-    public searchService: SearchService
+    public route: ActivatedRoute
   ){}
 
   ngOnInit(): void {

@@ -11,7 +11,6 @@ export class CartService {
   productQuantity = 1;
   myCart: any[] = [];
   total = 0;
-
  
   addToCart(productID: any, productName: any, productPrice: number, productPhoto: string){
       
@@ -19,7 +18,6 @@ export class CartService {
       
         for(let i=0; 0<this.myCart.length;i++){
           if (productID == this.myCart[i][0]) {
-                this.myCart[i][2] = productPrice;
                 this.myCart[i][3] += 1;
                 this.addedToCart(productName);
                 break;

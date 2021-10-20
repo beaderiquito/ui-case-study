@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-import { SearchService } from '../services/search.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -13,7 +12,6 @@ export class SearchBoxComponent implements OnInit{
   searchTerm: string = '';
 
   constructor(
-    public searchService: SearchService,
     private route: ActivatedRoute,
     private router: Router
     ) {  }
@@ -28,7 +26,6 @@ export class SearchBoxComponent implements OnInit{
   submit(): void{
     this.searchTerm = this.searchInput.value;
     this.searchInput.reset();
-    this.searchService.updateSearchTerm(this.searchTerm);
     this.router.navigateByUrl('/products/' + this.searchTerm);
   }
 }
